@@ -1,0 +1,235 @@
+*{
+	margin: 0px;
+	padding: 0px;
+	font-family: "微软雅黑";
+}
+/*
+ 最外层的div的样式
+ * */
+#recordcontainner{
+	width: 100%;
+	height: 100%;
+	padding: 0.1px;
+	/*border: 1px solid red;*/
+}
+
+/*顶部的样式  即位置那块的样式*/
+#recordhead{
+	width: 100%;
+	height: 30px;
+}
+#recordhead #recordheadcon{
+	width: 100%;
+	height: 30px;
+	background: rgb(235,245,249);
+}
+#recordhead #recordheadcon #spn{
+	font-size: 13px;
+	margin-left: 10px;
+	line-height: 30px;
+}
+#recordhead #recordheadcon #spn02{
+	font-size: 10px;
+	margin-left: 6px;
+}
+#recordhead #recordheadcon #spn03{
+	font-size:8px;
+	font-weight: bold;
+	margin-left: 5px;
+}
+
+/*合并数据部分的样式*/
+#recordcontainner #recordcontain{
+	width: 100%;
+	background: white;
+}
+#recordcontainner #recordcontain #recordcontaincon{
+	width:95%;
+	height: 500px;
+	border-top: 1px solid whitesmoke;
+	margin: 70px auto;
+	padding: 0.1px;
+	position: relative;
+}
+
+/*合并数据和导出数据按钮的公共样式*/
+#recordcontainner #recordcontain #recordcontaincon .dealdata{
+	width:100px;
+	height:40px;
+	float: left;
+	margin-top: -40px;
+	outline: 1px solid rgb(236,236,236);
+	cursor: pointer;
+	font-weight: bold;
+}
+/*合并数据和导出数据按钮的字体样式*/
+#recordcontainner #recordcontain #recordcontaincon .dealdata p{
+	font-size: 13px;
+	line-height: 40px;
+	text-align: center;
+}
+/*合并数据按钮的样式*/
+#meshdata{
+	margin-left: 0px;
+	background: white;
+}
+/*导出数据的按钮的样式*/
+#exportdata{
+	margin-left:105px;
+	background: rgb(240,245,247);
+}
+
+/*选择区域的样式*/
+
+#choice{
+	width: 100%;
+	height:200px;
+	border: 1px solid whitesmoke;
+	margin-top:30px;
+	position: absolute;
+	z-index: 999;
+	border-radius: 10px;
+}
+/*请选择需要关联的表单的样式*/
+#cuetext{
+	font-size:13px;
+	margin-top:10px;
+	color: darkblue;
+	font-weight: bold;
+	padding-bottom:8px;
+	border-bottom:1px solid whitesmoke;
+}
+#pipang{
+	font-size: 13px;
+	font-weight: bold;
+	margin-left: 5px;
+	margin-right: 5px;
+}
+
+/*每行选择区域的样式*/
+.choicesel{
+	width: 98%;
+	height: 40px;
+	/*outline: 1px solid;*/
+	margin:10px auto;
+}
+.choicesel p{
+	line-height: 40px;
+}
+/*每个select的样式*/
+.sel{
+	display: inline-block;
+	width: 150px;
+	height: 30px;
+	margin-left:20px;
+}
+.sel:first-child{
+	margin-left:0px;
+}
+/*输入表名的样式*/
+#tablename{
+	display: inline-block;
+	width: 150px;
+	height:25px;
+}
+/*输入表名后面的合并数据按钮的样式*/
+#mergebtn{
+	display: inline-block;
+	width: 100px;
+	height: 30px;
+	background: white;
+	border: 0.2px solid lightskyblue;
+	cursor: pointer;
+}
+/*中间提示区域的文字的样式*/
+#choicesybll{
+	height: 40px;
+	background: rgb(236,236,236);
+}
+#choicesybll p{
+	font-size: 11px;
+	line-height: 40px;
+	color: gray;
+	letter-spacing: 1px;
+}
+#cue{
+	color: red;
+	margin-left: 5px;
+}
+
+
+#newsybll{
+	margin-left: 10px;
+}
+#sybllname{
+	display: inline-block;
+	width: 100px;
+	height:25px;
+}
+
+/*添加关联字段和添加导出字段的样式*/
+.choicesel a{
+	text-decoration: none;
+	color: black;
+	font-size: 12px;
+	vertical-align: middle;
+	margin-left: -5px;
+	cursor: pointer;
+}
+.choicesel .iconfont{
+	vertical-align:middle;
+	margin-left: 10px;
+	cursor: pointer;
+}
+
+/*导出数据页面的样式*/
+
+#exportpage{
+	width: 100%;
+	height:200px;
+	border-top: 1px solid whitesmoke;
+	margin-top:30px;
+	position: absolute;
+	z-index: -999;
+}
+#selecttable{
+	width:100%;
+	height: 40px;
+	line-height: 40px;
+	font-size: 15px;
+}
+/*
+ * 表单名称的样式
+ */
+#tablename{
+	width:130px;
+	height: 20px;
+}
+/*查询的重置的公共样式*/
+.mybtn{
+	display: inline-block;
+	width:50px;
+	height: 22px;
+	background: white;
+	border: 0px;
+	outline: 1px solid;
+	cursor: pointer;
+	font-size: 10px;
+	margin-left: 8px;
+}
+/*查询按钮的单独样式*/
+#selectbtn{
+	background:rgb(66,141,194);
+	color: white;
+}
+/*导出总标的样式*/
+#inbtn{
+	width: 80px;
+	height: 25px;
+	font-size: 13px;
+	background: rgb(66,141,194);
+	color: white;
+	border: 0px;
+	cursor: pointer;
+	margin-left: 10px;
+}

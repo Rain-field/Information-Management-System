@@ -1,0 +1,31 @@
+body{
+    padding: 0;
+    margin: 0;
+    font-size: 14px;
+}
+.logMa-active{
+    color: white;
+    background: #418CC2;
+}
+.logMa-input{
+    margin-top:20px;
+}
+.logMa-input input{
+    border: 1px solid #ccc;
+    height: 20px;
+    margin: 0 5px;
+    border-radius: 5px;
+}
+.logMa-btn{
+    margin-left: 10px;
+    padding: 5px 20px;
+    border:1px solid #ccc;
+    border-radius: 5px;
+    cursor: pointer;
+}
+#startTime,#endTime{
+    width:150px;
+}
+.layui-table-page{
+    text-align: center;
+}

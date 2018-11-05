@@ -1,0 +1,126 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+
+.myform {
+    margin: 15px;
+}
+.myform-head,.myform-mid,.myform-foot {
+    padding: 10px;
+}
+
+.form-addform-style {
+    border: 1px solid #ccc;
+    width: 250px;
+    height: 150px;
+    border-radius: 8px;
+    position: relative;
+}
+.text-center {
+    text-align: center;
+    padding: 10px 0 5px ;
+}
+.text-sm {
+    font-size: 12px;
+}
+
+.text-bold {
+    font-weight: 700;
+}
+
+.export-box {
+    margin:20px 10px 0 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+}
+.export-title {
+    margin: 15px 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #eee;
+}
+
+.export-icon {
+    color: #418CC2;
+    font-weight: 700;
+}
+.export-content {
+    margin: 0 10px;
+    padding: 10px;
+}
+.left-nav {
+ 
+  font-size: 16px;
+  line-height: 20px;
+
+}
+.left-nav::after,.left-nav::before {
+    clear: both;
+    content: '';
+    display:block;
+    visibility: hidden;
+}
+.left-navtab {
+    float: left;
+    width: 200px;
+}
+.left-nav-item {
+    height:40px;
+    background-color: cyan; 
+}
+.bor-black {
+    border: 1px solid black;
+    box-sizing: border-box;
+}
+.left-nav-content {
+    float: left;
+    background-color: #418CC2;
+}
+
+.my-btn-bgblue {
+    background-color: #418CC2 !important;
+}
+
+.my-form-thin {
+    height: 32px;
+    line-height: 32px !important;
+    padding: 0px 5px !important;
+    box-sizing: border-box !important;
+    width: auto;
+}
+.my-from-boon {
+    height: 32px;
+    line-height: 32px;
+    padding: 0px 15px !important;
+    box-sizing: border-box !important;
+
+}
+.my-from-short {
+    height: 28px;
+    line-height: 26px;
+}
+.layui-pre {
+    font: 14px Helvetica Neue,Helvetica,PingFang SC,Tahoma,Arial,sans-serif;
+}
+.my-btn-blue {
+    color: #418CC2 !important;
+    border-color: #418CC2;
+}
+
+.my-text-center {
+   vertical-align: middle;
+   text-align: center;
+}
+.my-icon-center-big {
+    height: 50px;
+    width: 50px;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    font-size: 48px;
+    color: #ccc;
+}

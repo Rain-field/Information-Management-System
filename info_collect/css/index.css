@@ -1,0 +1,187 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+html,body{
+    width: 100%;
+    height: 100%;
+    /* overflow: hidden; */
+}
+img{
+    vertical-align: middle;
+}
+ul,li{
+    list-style: none;
+}
+/* top的header部分样式 */
+.top{
+    width: 100%;
+    min-width: 800px;
+    height:70px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgb(5, 109, 168);
+}
+.top h2{
+    width: 300px;
+    color: #fff;
+    margin-left: 20px;
+    font-size: 25px;
+    letter-spacing: 8px;
+}
+.welcome{
+    width: 300px;
+    height: 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    margin-right: 20px;
+    align-items: flex-end;
+}
+.welcome .return a{
+    text-decoration: none;
+    color: #eeeeee;
+    font-size: 14px;
+}
+.welcome .user{
+    width: 200px;
+    height: 25px;
+    text-align: center;
+    line-height: 25px;    
+    font-size: 14px;
+    color: #eeeeee;
+    border-radius: 15px;
+    background: rgba(83, 83, 83, 0.4)
+}
+/* 中间的主体content部分的样式 */
+#content{
+    width: 100%;
+    min-width: 672px;
+    height: calc( 100% - 100px);
+    display: flex;
+    justify-content: space-between;
+    /* border: 1px solid red; */
+}
+/* 中间内容的左边菜单操作部分 */
+#content_left{
+    width: 16%;
+    min-width: 150px;
+    height: 100%;
+    border-right: 1px solid #c7c7c7;
+}
+.tab_style{
+    text-indent: 10px;
+}
+.menu{
+    width: 100%;
+    height: 40px;
+    line-height: 40px;
+    color: #fff;
+    font-size: 16px;
+    background: rgb(60,149,200);
+}
+.menu_list{
+    width: 100%;
+    height: calc( 100% - 40px);
+    background: rgb(240, 249, 253);
+}
+.list_item{
+    width: 100%;
+    min-height: 30px;
+    height: auto;    
+}
+.menu_title{
+    width: 100%;
+    height: 35px;
+    line-height: 35px;
+    font-weight: bold;
+    cursor: pointer;
+    background: rgb(212,231,240);
+}
+.list_item .list_child{
+    width: 100%;
+    height: auto;
+    display: none;
+    
+}
+.list_child .li_select{
+    width: 100%;
+    height: 30px;
+    line-height: 30px;
+    text-indent: 30px;
+}
+.li_select .icon{
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    vertical-align: middle;
+    background: url(../images/right.png) no-repeat; 
+    background-size:20px 20px; 
+}
+.list_child .li_select:hover{
+    cursor: pointer;
+    color: rgb(62,175,224);
+}
+/* 中间内容对应的右边操作部分 */
+#content_right{
+    width: 86%;
+    max-height: 550px;
+}
+.nav_bar{
+    width: 100%;
+    height: 40px;
+    line-height: 40px;
+    text-indent: 10px;
+    font-size: 15px;
+    background: rgb(240, 249, 253);
+}
+.nav_bar span{
+    width: 60px;
+    height: 40px;
+    line-height: 40px;
+    display: inline-block;
+}
+.nav_crumbs{
+    display: inline-block;
+    font-size: 13px;
+}
+.loc{
+    font-weight: bold;
+    font-size: 15px;
+}
+.nav_crumbs li{
+    float: left;
+}
+
+
+/* 底部footer部分的样式 */
+.bottom{
+    width: 100%;
+    min-width: 672px;
+    height: 30px;
+    line-height: 30px;
+    text-indent: 10px;
+    color: #4e4e4e;
+    font-size: 14px;
+    background: rgb(240, 249, 253);
+    border-top: 1px solid #c7c7c7;
+}
+#clear{
+    width:100%;
+    height:30px;
+    margin:5px;
+}
+.blue-whitefont {
+    background-color: rgb(62,175,224);
+    color: white;
+    pointer-events: none;
+}
+
+.white-blackfont {
+    background-color: white;
+    color: black;
+}
+.content_right_down>div{
+    display: none;
+}
