@@ -93,7 +93,7 @@
     height: 32px;
     line-height: 32px;
     padding: 0px 15px !important;
-    box-sizing: border-box !important;
+    box-sizing: border-box;
 
 }
 .my-from-short {
@@ -123,4 +123,40 @@
     margin: auto;
     font-size: 48px;
     color: #ccc;
+}
+
+.my-hide {
+    display: none;
+}
+
+/* 此类生成输入框添加分类专用 */
+.my-input-mwid {
+    margin-right: 10px;
+    margin-left: 5px;
+    width: 75px;
+    height: 28px;
+    padding: 0px !important;
+    overflow: hidden;
+}
+
+
+.edit-range {
+    width: 100px;
+    box-sizing: content-box;
+}
+.edit-range-done{
+    width: 75px;
+    margin: 0 10px 0 5px;
+}
+.my-icon-inline {
+    position: absolute;
+    right: 5px;
+    top: 0px;
+}
+.my-btn-danger {
+    color: #ff3300;
+}
+
+.my-icon-del {
+    cursor: pointer;
 }

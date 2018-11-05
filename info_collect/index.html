@@ -146,15 +146,15 @@
                                             <input type="text" id="form-name" placeholder="请输入表单名称" class="layui-input my-form-thin">
                                         </div>
                                     </div>
-
-
+                
+                
                                     <div class="layui-inline">
                                         <label for="date1" class="layui-form-label my-form-thin layui-form-mid">创建时间</label>
                                         <div class="layui-input-inline">
                                             <input type="text" name="time" id="date1" class="layui-input date my-form-thin">
                                         </div>
                                     </div>
-
+                
                                     <div class="layui-inline">
                                         <div class="layui-form-mid my-form-thin">至</div>
                                         <div class="layui-input-inline">
@@ -165,9 +165,9 @@
                                         <button class="layui-btn layui-btn-sm my-btn-bgblue  my-form-boon">查询</button>
                                     </div>
                                     <div class="layui-inline">
-                                        <button class="layui-btn  layui-btn-primary layui-btn-sm  my-btn-center my-from-boon my-from-short">重置</button>
+                                        <button class="layui-btn layui-btn-primary layui-btn-sm my-btn-center my-from-boon my-from-short">重置</button>
                                     </div>
-
+                
                                 </div>
                             </div>
                         </div>
@@ -176,14 +176,18 @@
                         <div class="myform-mid">
                             <pre class="layui-pre my-form-thin layui-form-label">分        类</pre>
                             <button class="layui-btn layui-btn-sm my-btn-bgblue my-btn-center my-form-boon">全部</button>
-                            <button class="layui-btn  layui-btn-primary layui-btn-sm  my-from-boon my-from-short my-btn-blue">未分类</button>
-                            <button class="layui-btn  layui-btn-primary layui-btn-sm  my-from-boon my-from-short my-btn-blue">添加</button>
+                            <button class="layui-btn layui-btn-primary layui-btn-sm my-from-boon my-from-short my-btn-blue">未分类</button>
+                            <button class="layui-btn layui-btn-primary layui-btn-sm my-from-boon my-from-short my-btn-blue  my-hide my-add">
+                                <i class="layui-icon">&#xe654;</i></button>
+                            <button class="layui-btn  layui-btn-danger layui-btn-sm my-from-boon my-from-short  my-hide my-done">完成编辑</button>
+                            <button class="layui-btn  layui-btn-primary layui-btn-sm my-from-boon my-from-short my-btn-blue edit-btn ">
+                                <i class="layui-icon">&#xe642;</i></button>
                         </div>
                         <!-- 表单分类结束 -->
                         <div class="myform-foot">
                             <div class="myform-foot-addform">
                                 <div class="form-addform-style layui-form my-text-center">
-                                        <i class="layui-icon my-icon-center-big">&#xe654;</i>
+                                    <i class="layui-icon my-icon-center-big">&#xe654;</i>
                                 </div>
                             </div>
                         </div>
@@ -202,15 +206,15 @@
                                             <input type="text" id="form-name" placeholder="请输入表单名称" class="layui-input my-form-thin">
                                         </div>
                                     </div>
-
-
+                
+                
                                     <div class="layui-inline">
                                         <label for="date1" class="layui-form-label my-form-thin layui-form-mid">创建时间</label>
                                         <div class="layui-input-inline">
                                             <input type="text" name="time" id="date1" class="layui-input date my-form-thin">
                                         </div>
                                     </div>
-
+                
                                     <div class="layui-inline">
                                         <div class="layui-form-mid my-form-thin">至</div>
                                         <div class="layui-input-inline">
@@ -223,17 +227,17 @@
                                     <div class="layui-inline">
                                         <button class="layui-btn  layui-btn-primary layui-btn-sm  my-btn-center my-from-boon my-from-short">重置</button>
                                     </div>
-
+                
                                 </div>
                             </div>
                         </div>
                         <!-- 表单查询筛选结束 -->
-<!-- 表单分类开始 -->
+                        <!-- 表单分类开始 -->
                         <div class="myform-mid">
                             <pre class="layui-pre my-form-thin layui-form-label">分        类</pre>
                             <button class="layui-btn layui-btn-sm my-btn-bgblue my-btn-center my-form-boon">全部</button>
                             <button class="layui-btn  layui-btn-primary layui-btn-sm  my-from-boon my-from-short my-btn-blue">未分类</button>
-                            <button class="layui-btn  layui-btn-primary layui-btn-sm  my-from-boon my-from-short my-btn-blue">添加</button>
+                            <button class="layui-btn  layui-btn-primary layui-btn-sm  my-from-boon my-from-short my-btn-blue my-btn-add"><i class="layui-icon">&#xe642;</i></button>
                         </div>
                         <!-- 表单分类结束 -->
                         <div class="myform-foot">
@@ -556,6 +560,8 @@
     <script src="js/move.js"></script>
     <script src="js/logMa.js"></script>
     <script src="js/roleSet.js"></script>
+    <script src="js/Myform.js"></script>
+
     <script src="js/Authorize my page.js"></script>
 
 </body>
