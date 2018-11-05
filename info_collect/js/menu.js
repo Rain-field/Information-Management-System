@@ -3,9 +3,8 @@ $(function(){
     window.location.reload="index.html";
     // 重新刷新页面
     if (sessionStorage.getItem("id")) {
-        console.log(123)
         divShow(sessionStorage.getItem("id"));
-        $('.nav_title').html(history.state.title);
+        $('.nav_title').html(sessionStorage.getItem("title"));
         if (sessionStorage.getItem("id")>4) {
             $('.system_set').eq(sessionStorage.getItem("id")-5).children('.icon').css({ background: 'url(images/down.png) no-repeat' }).end().siblings().children('.icon').css({ background: 'url(images/right.png) no-repeat' });
             $('.system_set').eq(sessionStorage.getItem("id")-5).addClass('blue-whitefont').siblings().removeClass('blue-whitefont');
@@ -86,10 +85,11 @@ function historyState(obj,_this){
 function divShow(index){
     $('.content_box').eq(index).show().siblings().hide();
 }
+
 // 记录history对象状态
 window.onpopstate = function(e){
     // console.log(e);
-    // console.log(history.state);
+    console.log(history.state);
     var pre_id = history.state.id;
     // 页面显示部分
     divShow(pre_id);

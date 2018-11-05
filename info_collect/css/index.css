@@ -48,7 +48,7 @@ ul,li{
     width: 200px;
     height: 25px;
     text-align: center;
-    line-height: 25px;    
+    line-height: 25px;
     font-size: 14px;
     color: #eeeeee;
     border-radius: 15px;
@@ -63,6 +63,7 @@ ul,li{
     justify-content: space-between;
     /* border: 1px solid red; */
 }
+
 /* 中间内容的左边菜单操作部分 */
 #content_left{
     width: 16%;
@@ -89,7 +90,7 @@ ul,li{
 .list_item{
     width: 100%;
     min-height: 30px;
-    height: auto;    
+    height: auto;
 }
 .menu_title{
     width: 100%;
@@ -103,7 +104,7 @@ ul,li{
     width: 100%;
     height: auto;
     display: none;
-    
+
 }
 .list_child .li_select{
     width: 100%;
@@ -116,8 +117,8 @@ ul,li{
     width: 20px;
     height: 20px;
     vertical-align: middle;
-    background: url(../images/right.png) no-repeat; 
-    background-size:20px 20px; 
+    background: url(../images/right.png) no-repeat;
+    background-size:20px 20px;
 }
 .list_child .li_select:hover{
     cursor: pointer;
