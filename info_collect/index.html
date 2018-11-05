@@ -12,6 +12,11 @@
     <link rel="stylesheet" href="css/Myform.css">
     <link rel="stylesheet" href="css/logMa.css">
     <link rel="stylesheet" href="css/roleSet.css">
+    <!--引入ztree-->
+    <link rel="stylesheet" href="zTree_v3/css/demo.css" type="text/css">
+    <link rel="stylesheet" href="zTree_v3/css/zTreeStyle/zTreeStyle.css" type="text/css">
+    <link rel="stylesheet" href="zTree_v3/css/metroStyle/metroStyle.css" type="text/css">
+    <!--引入ztree-->
     <link rel="stylesheet" href="css/DA.css">
     <link rel="stylesheet" href="css/iconfont.css">
     <link rel="stylesheet" href="css/delete.css">
@@ -75,7 +80,14 @@
     </style>
 </head>
 
-<body>
+<body><!--<div class="layui-form">-->
+<!--<i class="layui-icon layui-icon-add-1"></i><input type="checkbox" lay-skin="primary"><i class="layui-icon layui-icon-group"></i><span>办公室</span><br>-->
+<!--<i class="layui-icon layui-icon-add-1"></i><input type="checkbox" lay-skin="primary"><i class="layui-icon layui-icon-group"></i><span>财务部</span><br>-->
+<!--<i class="layui-icon layui-icon-add-1"></i><input type="checkbox" lay-skin="primary"><i class="layui-icon layui-icon-group"></i><span>解决方案部</span><br>-->
+<!--<i class="layui-icon layui-icon-add-1"></i><input type="checkbox" lay-skin="primary"><i class="layui-icon layui-icon-group"></i><span>研发部</span><br>-->
+<!--<i class="layui-icon layui-icon-add-1"></i><input type="checkbox" lay-skin="primary"><i class="layui-icon layui-icon-group"></i><span>行业客户部</span><br>-->
+<!--<i class="layui-icon layui-icon-add-1"></i><input type="checkbox" lay-skin="primary"><i class="layui-icon layui-icon-group"></i><span>产品部</span><br>-->
+<!--</div>-->
     <!-- 头部header部分 -->
     <header class="top">
         <h2>数据侠信息采集系统</h2>
@@ -412,41 +424,43 @@
                     </div>
                     <!--创建角色的弹窗内容-->
                     <div class="creatRole">
-                        <table class="layui-table" lay-even lay-skin="nob">
-                            <tr>
-                                <td>角色名称:</td>
-                                <td><input type="text"><br></td>
-                            </tr>
-                            <tr>
-                                <td>角色描述:</td>
-                                <td><input type="text"><br></td>
-                            </tr>
-                            <tr>
-                                <td>权限分配:</td>
-                                <td>
-                                    <div class="quanxian_content">
-                                        <div class="layui-collapse" lay-accordion>
-                                            <div class="layui-colla-item">
-                                                <h2 class="layui-colla-title">表单设置</h2>
-                                                <div class="layui-colla-content layui-show"><input type="checkbox">我的表单<br></div>
-                                                <div class="layui-colla-content layui-show"><input type="checkbox">授权我的<br></div>
-                                                <div class="layui-colla-content layui-show"><input type="checkbox">创建表单<br></div>
-                                                <div class="layui-colla-content layui-show"><input type="checkbox">数据分析<br></div>
-                                                <div class="layui-colla-content layui-show"><input type="checkbox">回收站<br></div>
+                        <form>
+                            <table class="layui-table" lay-even lay-skin="nob">
+                                <tr>
+                                    <td>角色名称:</td>
+                                    <td><input type="text" name="name"><br></td>
+                                </tr>
+                                <tr>
+                                    <td>角色描述:</td>
+                                    <td><input type="text"  name="text"><br></td>
+                                </tr>
+                                <tr>
+                                    <td>权限分配:</td>
+                                    <td>
+                                        <div class="quanxian_content">
+                                            <div class="layui-collapse" lay-accordion>
+                                                <div class="layui-colla-item">
+                                                    <h2 class="layui-colla-title">表单设置</h2>
+                                                    <div class="layui-colla-content layui-show"><input type="checkbox" id="myform">我的表单<br></div>
+                                                    <div class="layui-colla-content layui-show"><input type="checkbox" id="shouquanwode">授权我的<br></div>
+                                                    <div class="layui-colla-content layui-show"><input type="checkbox" id="createForm">创建表单<br></div>
+                                                    <div class="layui-colla-content layui-show"><input type="checkbox" id="dataAnl">数据分析<br></div>
+                                                    <div class="layui-colla-content layui-show"><input type="checkbox" id="recycle">回收站<br></div>
+                                                </div>
+                                            </div>
+                                            <div class="layui-collapse" lay-accordion>
+                                                <div class="layui-colla-item">
+                                                    <h2 class="layui-colla-title">系统设置</h2>
+                                                    <div class="layui-colla-content layui-show"><input type="checkbox" id="chaoguan">超管<br></div>
+                                                    <div class="layui-colla-content layui-show"><input type="checkbox" id="rizhiManage">日志管理<br></div>
+                                                    <div class="layui-colla-content layui-show"><input type="checkbox" id="formManage">表单管理<br></div>
+                                                </div>
                                             </div>
                                         </div>
-                                        <div class="layui-collapse" lay-accordion>
-                                            <div class="layui-colla-item">
-                                                <h2 class="layui-colla-title">系统设置</h2>
-                                                <div class="layui-colla-content layui-show"><input type="checkbox">超管<br></div>
-                                                <div class="layui-colla-content layui-show"><input type="checkbox">日志管理<br></div>
-                                                <div class="layui-colla-content layui-show"><input type="checkbox">表单管理<br></div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </td>
-                            </tr>
-                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+                        </form>
                     </div>
                     <div style="clear: both"></div>
                     <!--添加人员的内容-->
@@ -470,13 +484,10 @@
                                                 <div class="search">
                                                     <input type="text" placeholder="查找部门/姓名/职位"><i class="layui-icon" style="font-size: 20px">&#xe615;</i>
                                                 </div>
-                                                <div class="layui-form">
-                                                    <i class="layui-icon layui-icon-add-1"></i><input type="checkbox" lay-skin="primary"><i class="layui-icon layui-icon-group"></i><span>办公室</span><br>
-                                                    <i class="layui-icon layui-icon-add-1"></i><input type="checkbox" lay-skin="primary"><i class="layui-icon layui-icon-group"></i><span>财务部</span><br>
-                                                    <i class="layui-icon layui-icon-add-1"></i><input type="checkbox" lay-skin="primary"><i class="layui-icon layui-icon-group"></i><span>解决方案部</span><br>
-                                                    <i class="layui-icon layui-icon-add-1"></i><input type="checkbox" lay-skin="primary"><i class="layui-icon layui-icon-group"></i><span>研发部</span><br>
-                                                    <i class="layui-icon layui-icon-add-1"></i><input type="checkbox" lay-skin="primary"><i class="layui-icon layui-icon-group"></i><span>行业客户部</span><br>
-                                                    <i class="layui-icon layui-icon-add-1"></i><input type="checkbox" lay-skin="primary"><i class="layui-icon layui-icon-group"></i><span>产品部</span><br>
+                                                <div class="content_wrap">
+                                                    <div class="zTreeDemoBackground">
+                                                        <ul id="treeDemo" class="ztree"></ul>
+                                                    </div>
                                                 </div>
                                             </td>
                                             <td></td>
@@ -560,6 +571,11 @@
     <script src="js/move.js"></script>
     <script src="js/logMa.js"></script>
     <script src="js/roleSet.js"></script>
+    <!--ztree的js-->
+    <script type="text/javascript" src="zTree_v3/js/jquery.ztree.core.js"></script>
+    <script type="text/javascript" src="zTree_v3/js/jquery.ztree.excheck.js"></script>
+    <script type="text/javascript" src="zTree_v3/js/jquery.ztree.exedit.js"></script>
+    <!--ztree的js-->
     <script src="js/Myform.js"></script>
 
     <script src="js/Authorize my page.js"></script>
