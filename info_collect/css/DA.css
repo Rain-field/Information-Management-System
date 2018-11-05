@@ -45,8 +45,8 @@
 }
 #recordcontainner #recordcontain #recordcontaincon{
 	width:95%;
-	height: 500px;
-	border-top: 1px solid whitesmoke;
+	height:380px;
+	border-top: 1px solid rgb(243,246,247);
 	margin: 70px auto;
 	padding: 0.1px;
 	position: relative;
@@ -58,7 +58,7 @@
 	height:40px;
 	float: left;
 	margin-top: -40px;
-	outline: 1px solid rgb(236,236,236);
+	outline: 1px solid rgb(243,246,247);
 	cursor: pointer;
 	font-weight: bold;
 }
@@ -84,7 +84,7 @@
 #choice{
 	width: 100%;
 	height:200px;
-	border: 1px solid whitesmoke;
+	border: 1px solid rgb(219,215,215);
 	margin-top:30px;
 	position: absolute;
 	z-index: 999;
@@ -120,29 +120,33 @@
 .sel{
 	display: inline-block;
 	width: 150px;
-	height: 30px;
+	height: 25px;
 	margin-left:20px;
+	font-size: 13px;
 }
 .sel:first-child{
 	margin-left:0px;
 }
 /*输入表名的样式*/
-#tablename{
+#tablename1{
 	display: inline-block;
 	width: 150px;
 	height:25px;
+	font-size:13px;
 }
 /*输入表名后面的合并数据按钮的样式*/
 #mergebtn{
 	display: inline-block;
 	width: 100px;
-	height: 30px;
+	height: 25px;
 	background: white;
-	border: 0.2px solid lightskyblue;
+	border: 0.2px solid rgb(67,166,219);
 	cursor: pointer;
+	font-size:13px;
 }
 /*中间提示区域的文字的样式*/
 #choicesybll{
+	width: 100%;
 	height: 40px;
 	background: rgb(236,236,236);
 }
@@ -201,9 +205,9 @@
 /*
  * 表单名称的样式
  */
-#tablename{
+#tablename2{
 	width:130px;
-	height: 20px;
+	height: 25px;
 }
 /*查询的重置的公共样式*/
 .mybtn{
