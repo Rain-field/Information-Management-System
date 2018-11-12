@@ -31,3 +31,22 @@ body{
     height: 25px;
     border: 1px solid #ccc;
 }
+#logTb{
+    margin-top: 20px;
+    width: 100%;
+    text-align: center;
+    color: #2d2d2d;
+}
+#logTb th{
+    background: #f0f5f7;
+    padding: 6px;
+    border: 1px solid #b6cad2;
+    color: #333;
+}
+#logTb td{
+    border: 1px solid #e7e7e7;
+    padding: 6px;
+}
+#logTb tr:nth-child(2n){
+    background: #f5f8fa;
+}

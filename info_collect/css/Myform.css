@@ -3,7 +3,6 @@
     margin: 0;
 }
 
-
 .myform {
     margin: 15px;
 }
@@ -13,10 +12,14 @@
 
 .form-addform-style {
     border: 1px solid #ccc;
-    width: 250px;
-    height: 150px;
+    /* width: 250px; */
+    height: auto;
     border-radius: 8px;
+    padding: 10px;
     position: relative;
+}
+.form-addform-style>p {
+    margin-bottom: 20px;
 }
 .text-center {
     text-align: center;
@@ -83,15 +86,18 @@
 }
 
 .my-form-thin {
-    height: 32px;
-    line-height: 32px !important;
+    height: 25px;
+    line-height: 25px !important;
     padding: 0px 5px !important;
     box-sizing: border-box !important;
     width: auto;
 }
+.myform-left {
+    margin-left: -35px;
+}
 .my-from-boon {
-    height: 32px;
-    line-height: 32px;
+    height: 25px;
+    line-height: 25px;
     padding: 0px 15px !important;
     box-sizing: border-box;
 
@@ -108,21 +114,18 @@
     border-color: #418CC2;
 }
 
-.my-text-center {
-   vertical-align: middle;
-   text-align: center;
-}
 .my-icon-center-big {
     height: 50px;
     width: 50px;
     position: absolute;
     top: 0;
-    bottom: 0;
     left: 0;
     right: 0;
+    bottom: 0;
     margin: auto;
     font-size: 48px;
     color: #ccc;
+    
 }
 
 .my-hide {
@@ -159,4 +162,28 @@
 
 .my-icon-del {
     cursor: pointer;
+}
+
+.myform-table-head {
+    padding: 5px;
+}
+.myform-table-text>div,
+.myform-table-text>span {
+    line-height: 23px;
+}
+
+/* 颜色区样式 */
+/* 色块大小 */
+.myform-theme {
+    width: 60px;
+    height: 60px;
+    float: left;
+    cursor: pointer;
+}
+.myform-theme-focus {
+    border:1px solid #3366ff;  
+}
+
+.myform-table-del {
+    border:none;
 }

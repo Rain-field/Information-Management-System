@@ -58,6 +58,8 @@
 }
 
 .item {
+    position: absolute;
+    z-index: 2016;
     width: 100%;
     max-width:193px ;
     height: 30px;
@@ -91,6 +93,7 @@
 }
 
 .item .item-box {
+    float: left;
     width: 75%;
     height: 30px;
     line-height: 30px;
@@ -98,11 +101,15 @@
 }
 
 .item-con {
+    line-height: 30px;
     width: 75%;
     height: 30px;
     position: relative;
 }
-
+.del-btn{
+    float:right;
+    /* display: none; */
+}
 input::-webkit-input-placeholder {
     font-size: 10px;
 }

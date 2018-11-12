@@ -8,14 +8,21 @@
     <link rel="stylesheet" href="layui/css/layui.css">
     <link rel="stylesheet" href="css/index.css">
     <link rel="stylesheet" href="css/form.css">
+    <link rel="stylesheet" href="css/send.css">
     <link rel="stylesheet" href="css/create.css">
     <link rel="stylesheet" href="css/Myform.css">
     <link rel="stylesheet" href="css/logMa.css">
     <link rel="stylesheet" href="css/roleSet.css">
+    <link rel="stylesheet" href="css/Recycle-table.css">
+    <!--引入ztree-->
+    <!-- <link rel="stylesheet" href="zTree_v3/css/demo.css" type="text/css"> -->
+    <link rel="stylesheet" href="zTree_v3/css/zTreeStyle/zTreeStyle.css" type="text/css">
+    <link rel="stylesheet" href="zTree_v3/css/metroStyle/metroStyle.css" type="text/css">
+    <!--引入ztree-->
     <link rel="stylesheet" href="css/DA.css">
     <link rel="stylesheet" href="css/iconfont.css">
+    <link rel="stylesheet" href="css/iconfont2.css">
     <link rel="stylesheet" href="css/delete.css">
-
     <!-- FontAwsome -->
     <link rel="stylesheet" href="source/font-awesome-4.7.0/css/font-awesome.min.css">
     <style>
@@ -99,7 +106,7 @@
                         <span>表单设置</span>
                     </div>
                     <ul class="list_child">
-                         <li class="li_select form_set"><span class="icon"></span><span class="box-name" data-url="?=my_form_box">我的表单</span></li>
+                        <li class="li_select form_set"><span class="icon"></span><span class="box-name" data-url="?=my_form_box">我的表单</span></li>
                         <li class="li_select form_set"><span class="icon"></span><span class="box-name" data-url="?=my_grant_box">授权我的</span></li>
                         <li class="li_select form_set"><span class="icon"></span><span class="box-name" data-url="?=create_form_box">创建表单</span></li>
                         <li class="li_select form_set"><span class="icon"></span><span class="box-name" data-url="?=data_analysis_box">数据分析</span></li>
@@ -112,7 +119,7 @@
                         <span>系统设置</span>
                     </div>
                     <ul class="list_child">
-                         <li class="li_select system_set"><span class="icon"></span><span class="box-name" data-url="?=role_set_box">角色设置</span></li>
+                        <li class="li_select system_set"><span class="icon"></span><span class="box-name" data-url="?=role_set_box">角色设置</span></li>
                         <li class="li_select system_set"><span class="icon"></span><span class="box-name" data-url="?=log_set_box">日志管理</span></li>
                         <li class="li_select system_set"><span class="icon"></span><span class="box-name" data-url="?=export_set_box">导出设置</span></li>
                     </ul>
@@ -130,7 +137,7 @@
             </div>
             <!-- 右边内容显示的主体部分（面包屑导航下面的部分） -->
             <div class="content_right_down">
-<!-- 我的表单部分 -->
+                <!-- 我的表单部分 -->
                 <div class="my_form_box content_box">
                     <div class="myform">
                         <!-- 表单查询筛选 -->
@@ -146,14 +153,14 @@
 
 
                                     <div class="layui-inline">
-                                        <label for="date1" class="layui-form-label my-form-thin layui-form-mid">创建时间</label>
+                                        <label for="date1" class="layui-form-label my-form-thin myform-left layui-form-mid">创建时间</label>
                                         <div class="layui-input-inline">
                                             <input type="text" name="time" id="date1" class="layui-input date my-form-thin">
                                         </div>
                                     </div>
 
                                     <div class="layui-inline">
-                                        <div class="layui-form-mid my-form-thin">至</div>
+                                        <div class="layui-form-mid my-form-thin myform-left">至</div>
                                         <div class="layui-input-inline">
                                             <input type="text" name="time" id="date2" class="layui-input date my-form-thin">
                                         </div>
@@ -171,7 +178,7 @@
                         <!-- 表单查询筛选结束 -->
                         <!-- 表单分类开始 -->
                         <div class="myform-mid">
-                            <pre class="layui-pre my-form-thin layui-form-label">分        类</pre>
+                            <pre class="layui-pre my-form-thin layui-form-label">分类</pre>
                             <button class="layui-btn layui-btn-sm my-btn-bgblue my-btn-center my-form-boon">全部</button>
                             <button class="layui-btn layui-btn-primary layui-btn-sm my-from-boon my-from-short my-btn-blue">未分类</button>
                             <button class="layui-btn layui-btn-primary layui-btn-sm my-from-boon my-from-short my-btn-blue  my-hide my-add">
@@ -181,16 +188,180 @@
                                 <i class="layui-icon">&#xe642;</i></button>
                         </div>
                         <!-- 表单分类结束 -->
+
+
+                        <!-- 查看我的表单 -->
                         <div class="myform-foot">
-                            <div class="myform-foot-addform">
-                                <div class="form-addform-style layui-form my-text-center">
-                                    <i class="layui-icon my-icon-center-big">&#xe654;</i>
+                            <!--添加表单示例  -->
+                            <div class="myform-foot-addform layui-row layui-col-space18">
+                                <div class="layui-col-md4 layui-col-xs12 layui-col-sm6">
+                                    <div class="form-addform-style layui-form my-text-center layui-col-xs12 myform-table-demo">
+                                        <i class="layui-icon my-icon-center-big">&#xe654;</i>
+                                    </div>
+                                </div>
+                                <!-- 2 -->
+                                <div class="layui-col-md4 layui-col-xs12 layui-col-sm6">
+                                    <div class="form-addform-style myform-table-all">
+                                        <div class="myform-table-head">
+                                            <div class="myform-table-name layui-inline">数据表</div>
+                                            <button class="myform-table-status layui-btn layui-btn-radius layui-btn-sm layui-btn-normal">正在采集</button>
+                                            <button class="myform-table-del layui-btn layui-btn-xs layui-btn-primary"
+                                                title='删除' data-method='delete'>
+                                                <i class="layui-icon">&#xe640;</i>
+                                            </button>
+                                        </div>
+                                        <p class="myform-table-createTime">这里创建时间示例，相应的数据应该来自后台</p>
+                                        <div class="myform-table-info layui-row ">
+                                            <div class="layui-col-md3 layui-col-xs3 text-center myform-table-text">
+                                                <span>115</span>
+                                                <div>已采集数据</div>
+                                            </div>
+                                            <div class="layui-col-md3 layui-col-xs3 text-center myform-table-text">
+                                                <span>115</span>
+                                                <div>今日新增</div>
+                                            </div>
+                                            <div class="layui-col-md3 layui-col-xs3 text-center myform-table-text">
+                                                <span>115</span>
+                                                <div>表单浏览量</div>
+                                            </div>
+                                            <div class="layui-col-md3 layui-col-xs3 myform-table-btnItems text-center">
+                                                <div class="layui-inline">
+                                                    <button class="layui-btn layui-btn-xs myform-table-btn" title="主题"
+                                                        data-method='color'>
+                                                        <i class="layui-icon">&#xe66a;</i>
+                                                    </button>
+                                                    <button class="layui-btn layui-btn-xs myform-table-btn" title="分类"
+                                                        data-method="range">
+                                                        <i class="layui-icon">&#xe60a;</i>
+                                                    </button>
+                                                </div>
+                                                <div class="layui-inline">
+                                                    <button class="layui-btn layui-btn-xs myform-table-btn" title="总览"
+                                                        data-method='all'>
+                                                        <i class="layui-icon"'>&#xe60f;</i>
+                                                    </button>
+                                                    <button class="layui-btn layui-btn-xs myform-table-btn"
+                                                        title="预览" data-method='
+                                                            preview'>
+                                                            <i class="layui-icon">&#xe60e;</i>
+                                                    </button>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- 3 -->
+                                <div class="layui-col-md4 layui-col-xs12 layui-col-sm6">
+                                    <div class="form-addform-style myform-table-all">
+                                        <div class="myform-table-head">
+                                            <div class="myform-table-name layui-inline">人口普查表</div>
+                                            <button class="myform-table-status layui-btn layui-btn-radius layui-btn-sm layui-btn-normal">正在采集</button>
+                                            <button class="myform-table-del layui-btn layui-btn-xs layui-btn-primary"
+                                                title='删除' data-method='delete'>
+                                                <i class="layui-icon">&#xe640;</i>
+                                            </button>
+                                        </div>
+                                        <p class="myform-table-createTime">这里创建时间示例，相应的数据应该来自后台</p>
+                                        <div class="myform-table-info layui-row ">
+                                            <div class="layui-col-md3 layui-col-xs3 text-center myform-table-text">
+                                                <span>467</span>
+                                                <div>已采集数据</div>
+                                            </div>
+                                            <div class="layui-col-md3 layui-col-xs3 text-center myform-table-text">
+                                                <span>435</span>
+                                                <div>今日新增</div>
+                                            </div>
+                                            <div class="layui-col-md3 layui-col-xs3 text-center myform-table-text">
+                                                <span>654</span>
+                                                <div>表单浏览量</div>
+                                            </div>
+                                            <div class="layui-col-md3 layui-col-xs3 myform-table-btnItems text-center">
+                                                <div class="layui-inline">
+                                                    <button class="layui-btn layui-btn-xs myform-table-btn" title="主题"
+                                                        data-method='color'>
+                                                        <i class="layui-icon">&#xe66a;</i>
+                                                    </button>
+                                                    <button class="layui-btn layui-btn-xs myform-table-btn" title="分类"
+                                                        data-method="range">
+                                                        <i class="layui-icon">&#xe60a;</i>
+                                                    </button>
+                                                </div>
+                                                <div class="layui-inline">
+                                                    <button class="layui-btn layui-btn-xs myform-table-btn" title="总览"
+                                                        data-method='all'>
+                                                        <i class="layui-icon"'>&#xe60f;</i>
+                                                    </button>
+                                                    <button class="layui-btn layui-btn-xs myform-table-btn"
+                                                        title="预览" data-method='
+                                                            preview'>
+                                                            <i class="layui-icon">&#xe60e;</i>
+                                                    </button>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- 4 -->
+                                <div class="layui-col-md4 layui-col-xs12 layui-col-sm6">
+                                    <div class="form-addform-style myform-table-all">
+                                        <div class="myform-table-head">
+                                            <div class="myform-table-name layui-inline">问卷调查表</div>
+                                            <button class="myform-table-status layui-btn layui-btn-radius layui-btn-sm layui-btn-normal">正在采集</button>
+                                            <button class="myform-table-del layui-btn layui-btn-xs layui-btn-primary"
+                                                title='删除' data-method='delete'>
+                                                <i class="layui-icon">&#xe640;</i>
+                                            </button>
+                                        </div>
+                                        <p class="myform-table-createTime">这里创建时间示例，相应的数据应该来自后台</p>
+                                        <div class="myform-table-info layui-row ">
+                                            <div class="layui-col-md3 layui-col-xs3 text-center myform-table-text">
+                                                <span>345</span>
+                                                <div>已采集数据</div>
+                                            </div>
+                                            <div class="layui-col-md3 layui-col-xs3 text-center myform-table-text">
+                                                <span>321</span>
+                                                <div>今日新增</div>
+                                            </div>
+                                            <div class="layui-col-md3 layui-col-xs3 text-center myform-table-text">
+                                                <span>555</span>
+                                                <div>表单浏览量</div>
+                                            </div>
+                                            <div class="layui-col-md3 layui-col-xs3 myform-table-btnItems text-center">
+                                                <div class="layui-inline">
+                                                    <button class="layui-btn layui-btn-xs myform-table-btn" title="主题"
+                                                        data-method='color'>
+                                                        <i class="layui-icon">&#xe66a;</i>
+                                                    </button>
+                                                    <button class="layui-btn layui-btn-xs myform-table-btn" title="分类"
+                                                        data-method="range">
+                                                        <i class="layui-icon">&#xe60a;</i>
+                                                    </button>
+                                                </div>
+                                                <div class="layui-inline">
+                                                    <button class="layui-btn layui-btn-xs myform-table-btn" title="总览"
+                                                        data-method='all'>
+                                                        <i class="layui-icon"'>&#xe60f;</i>
+                                                    </button>
+                                                    <button class="layui-btn layui-btn-xs myform-table-btn"
+                                                        title="预览" data-method='
+                                                            preview'>
+                                                            <i class="layui-icon">&#xe60e;</i>
+                                                    </button>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
+                            <!-- 添加我的表单示例结束 -->
                         </div>
+                        <!-- 查看我的表单结束 -->
                     </div>
                 </div>
-<!-- 授权我的部分 -->
+                <!-- 授权我的部分 -->
                 <div class="my_grant_box content_box">
                     <div class="myform">
                         <!-- 表单查询筛选 -->
@@ -203,17 +374,15 @@
                                             <input type="text" id="form-name" placeholder="请输入表单名称" class="layui-input my-form-thin">
                                         </div>
                                     </div>
-
-
                                     <div class="layui-inline">
-                                        <label for="date1" class="layui-form-label my-form-thin layui-form-mid">创建时间</label>
+                                        <label for="date1" class="layui-form-label my-form-thin myform-left layui-form-mid">创建时间</label>
                                         <div class="layui-input-inline">
                                             <input type="text" name="time" id="date1" class="layui-input date my-form-thin">
                                         </div>
                                     </div>
 
                                     <div class="layui-inline">
-                                        <div class="layui-form-mid my-form-thin">至</div>
+                                        <div class="layui-form-mid my-form-thin myform-left">至</div>
                                         <div class="layui-input-inline">
                                             <input type="text" name="time" id="date2" class="layui-input date my-form-thin">
                                         </div>
@@ -231,20 +400,24 @@
                         <!-- 表单查询筛选结束 -->
                         <!-- 表单分类开始 -->
                         <div class="myform-mid">
-                            <pre class="layui-pre my-form-thin layui-form-label">分        类</pre>
+                            <pre class="layui-pre my-form-thin layui-form-label">分类</pre>
                             <button class="layui-btn layui-btn-sm my-btn-bgblue my-btn-center my-form-boon">全部</button>
-                            <button class="layui-btn  layui-btn-primary layui-btn-sm  my-from-boon my-from-short my-btn-blue">未分类</button>
-                            <button class="layui-btn  layui-btn-primary layui-btn-sm  my-from-boon my-from-short my-btn-blue my-btn-add"><i class="layui-icon">&#xe642;</i></button>
+                            <button class="layui-btn layui-btn-primary layui-btn-sm my-from-boon my-from-short my-btn-blue">未分类</button>
+                            <button class="layui-btn layui-btn-primary layui-btn-sm my-from-boon my-from-short my-btn-blue  my-hide my-add">
+                                <i class="layui-icon">&#xe654;</i></button>
+                            <button class="layui-btn  layui-btn-danger layui-btn-sm my-from-boon my-from-short  my-hide my-done">完成编辑</button>
+                            <button class="layui-btn  layui-btn-primary layui-btn-sm my-from-boon my-from-short my-btn-blue edit-btn ">
+                                <i class="layui-icon">&#xe642;</i></button>
                         </div>
                         <!-- 表单分类结束 -->
                         <div class="myform-foot">
                             <div class="myform-foot-addform">
-                               <div class="text-center text-sm text-bold">暂无授权的表单！</div>
+                                <div class="text-center text-sm text-bold">暂无授权的表单！</div>
                             </div>
                         </div>
                     </div>
                 </div>
-<!-- 创建表单部分 -->
+                <!-- 创建表单部分 -->
                 <div class="create_form_box content_box">
                     <div class="form_title">
                         <a>|&nbsp;创建表单</a>
@@ -283,67 +456,66 @@
                     </div>
 
                 </div>
-<!-- 数据分析部分 -->
+                <!-- 数据分析部分 -->
                 <div class="data_analysis_box content_box">
                     <div id='recordcontainner'>
-                        <div id='recordhead'>
-                            <div id='recordheadcon'>
-                                <p><span id='spn'>位置:</span><span id="spn02">表单设置 ></span><span id='spn03'>数据分析</span></p>
-                            </div>
-                        </div>
                         <div id='recordcontain'>
                             <div id='recordcontaincon'>
-                                <div class='dealdata'id='meshdata'>
+                                <div class='dealdata' id='meshdata'>
                                     <p>合并数据</p>
                                 </div>
-                                <div class='dealdata'id='exportdata'>
+                                <div class='dealdata' id='exportdata'>
                                     <p>导出数据</p>
                                 </div>
                                 <div id='choice'>
                                     <p id='cuetext'><span id='pipang'>|</span>请选择需要关联的表单</p>
                                     <div class='choicesel'>
-                                        <p>
-                                            <select name="" id="" class='sel'>
+                                        <p id='psel'>
+                                            <select name="" id="sel1" class='sel'>
                                                 <option value="请选择表单">请选择表单</option>
                                             </select>
-                                            <select name="" id="" class='sel'>
+                                            <select name="" id="sel2" class='sel'>
                                                 <option value="请选择表单">请选择表单</option>
                                             </select>
-                                            <select name="" id="" class='sel'>
+                                            <select name="" id="sel3" class='sel'>
                                                 <option value="请选择表单">请选择表单</option>
                                             </select>
-                                            <input type="text" name="name" id="tablename" placeholder='新表名称'/>
+                                            <input type="text" name="name" id="tablename1" placeholder='新表名称' />
                                             <input type='button' id='mergebtn' value='合并数据'>
                                         </p>
                                     </div>
                                     <div class='choicesel' id='choicesybll'>
                                         <p>请选择需要关联的字段<span id='cue'>(已经选择的表单会发生变化，以下的已添加字段会删除，然后重新添加)</span><span id='newsybll'>新的字段名</span></p>
                                     </div>
-                                    <div class='choicesel'>
-                                        <p>
-                                            <select name="" id="" class='sel'>
-                                                <option value="请选择字段">请选择字段</option>
-                                            </select>
-                                            <select name="" id="" class='sel'>
-                                                <option value="请选择字段">请选择字段</option>
-                                            </select>
-                                            <select name="" id="" class='sel'>
-                                                <option value="请选择字段">请选择字段</option>
-                                            </select>
-                                            <input type="text " name="sybllname" id="sybllname" value="" />
-                                            <i class='iconfont icon-htmal5icon18'></i>
-                                            <a href="">添加关联字段</a>
-                                            <i class='iconfont icon-htmal5icon18'></i>
-                                            <a href="">添加导出字段</a>
-                                        </p>
-
+                                    <div class='choicesel' id="choiceadd">
+                                        <div id='choiceselcontent'>
+                                            <div class="choicefiled">
+                                                <select name="" id="" class='sel seltable1'>
+                                                    <option value="请选择字段">请选择字段</option>
+                                                </select>
+                                                <select name="" id="" class='sel seltable2'>
+                                                    <option value="请选择字段">请选择字段</option>
+                                                </select>
+                                                <select name="" id="" class='sel seltable3'>
+                                                    <option value="请选择字段">请选择字段</option>
+                                                </select>
+                                                <input type="text " name="sybllname" class="sybllname" value="" />
+                                            </div>
+                                            <div class="addfiledbtn">
+                                                <i class='iconfont icon-htmal5icon18'></i>
+                                                <a href="javascript:;" id='addarrfiled'>添加关联字段</a>
+                                                <i class='iconfont icon-htmal5icon18'></i>
+                                                <a href="javascript:;" id="addexportfiled">添加导出字段</a>
+                                            </div>
+                                        </div>
                                     </div>
+
                                 </div>
                                 <div id='exportpage'>
                                     <div id="selecttable">
-                                        <form action="#" method="post">
-                                            <label for="tablename">表单名称</label>
-                                            <input type="text" name='tabelname' id='tablename' />
+                                        <form action="" method="post">
+                                            <label for="tablename2">表单名称</label>
+                                            <input type="text" name='tabelname' id='tablename2' />
                                             <label for="createtimestart">创建时间</label>
                                             <input type="text" name='createtimestart' id='createtimestart' />
                                             <span>至</span>
@@ -358,11 +530,97 @@
                         </div>
                     </div>
                 </div>
-<!-- 回收站部分 -->
+                <!-- 回收站部分 -->
                 <div class="recycle_bin_box content_box">
-                    <div id="delete"> <img src="images/denger.png" alt=""> 暂无已删除表单</div>
+                    <!-- <div id="delete"> <img src="images/denger.png" alt=""> 暂无已删除表单</div> -->
+                    <div class="Recycle-table">
+                        <!--回收的文件-->
+                        <p class="Recycle-text">信息表</p>
+                        <button class="Recycle-btn1" data-method='Reduction'>
+                            <i class="layui-icon layui-icon-return" style="font-size: 30px; color: #fff"></i><br>
+                            还原表单
+                        </button>
+                        <button class="Recycle-btn2" data-method='Delete'>
+                            <i class="layui-icon layui-icon-close-fill" style="font-size: 30px; color: #fff"></i><br>
+                            删除表单
+                        </button>
+                    </div>
                 </div>
-<!-- 角色设置部分 -->
+                <!-- 发布部分 -->
+                <div class="send_box content_box">
+                    <div class="Release">
+                        <span class='Release-line'>|</span> <span class="Release-send">发布方式</span>
+                        <p>
+                            <hr>
+                        </p>
+                        <div class="Release-content">
+                            表单名称 <input type="text" class="Release-text" placeholder="请输入表单名称"><span class="Release-fuhao">*</span></p>
+                            打开方式 <input type="radio" class="Release-text" checked="checked" value="">空表打开<p></p>
+                            是否分享 <input type="checkbox" class="Release-text" name="fenxiang">
+                            <p></p>
+                            分配表单查看人员 <button class="Release-addpeople" data-method="Viewers">添加人员</button><span class="addpeople"></span>
+                            <p></p>
+                            分配表单管理人员 <button class="Release-addpeople" data-method="Management">添加人员</button><span
+                                class="addpeople2"></span>
+                        </div>
+                    </div>
+                    <form class="layui-form" action="">
+                        <div class="Release">
+                            <span class='Release-line'>|</span> <span class="Release-send">启用和停用</span>
+                            <p>
+                                <hr />
+                            </p>
+                            <div class="layui-form-item">
+                                <label class="layui-form-label Release-text1">定时启停表单</label>
+                                <div class="layui-input-block">
+                                    <input class="choose" type="checkbox" name="switch" lay-skin="switch">
+                                </div>
+                            </div>
+                            <div class="layui-form-item">
+                                <label class="Release-text1 layui-form-label">收集定量反馈后停用表单</label>
+                                <div class="layui-input-block">
+                                    <input type="checkbox" name="switch" lay-skin="switch">
+                                </div>
+                                <!-- <div class="Release-content">
+                                定时启停表单  <input type="checkbox" class="Release-text" name="Start"><p></p>
+                                收集定量反馈后停用表单  <input type="checkbox" class="Release-text" name="Start"><p></p>
+                            </div> -->
+                            </div>
+                        </div>
+                        <div class="Release">
+                            <span class='Release-line'>|</span> <span class="Release-send">提交和通知</span>
+                            <p>
+                                <hr />
+                            </p>
+                            <div class="Release-content">
+                                <p>表单提交后页面显示 </p>
+                                表单提交后文字说明 <textarea placeholder=""> 谢谢参与</textarea>
+                                <p></p>
+                            </div>
+                        </div>
+                    </form>
+                    <div class="Release">
+                        <span class='Release-line'>|</span> <span class="Release-send">填写控制</span>
+                        <p>
+                            <hr />
+                        </p>
+                        <div class="Release-content">
+                            每个用户可多次填写 <input type="checkbox" class="Release-text" name="Control">
+                            <p></p>
+                            每个用户可修改反馈 <input type="checkbox" class="Release-text" name="Control">
+                            <p></p>
+                            用户可删除反馈信息 <input type="checkbox" class="Release-text" name="Control">
+                            <p></p>
+                            反馈时检验用户身份 <input type="checkbox" class="Release-text" name="Control">
+                            <p></p>
+                        </div>
+                    </div>
+                    <div class="Submit">
+                        <button>保存并启用</button>
+                        <button>保存</button>
+                    </div>
+                </div>
+                <!-- 角色设置部分 -->
                 <div class="role_set_box content_box">
                     <div class="juese">
                         <button class="layui-btn layui-btn-primary" data-btn="1"><i class="layui-icon layui-icon-add-1"></i>新建角色</button>
@@ -371,12 +629,12 @@
                         <button class="layui-btn layui-btn-primary" data-btn="4"><i class="layui-icon layui-icon-username"></i>添加人员</button>
                     </div>
                     <div class="jueseList">
-                        <div class="layui-collapse" lay-accordion>
+                        <div class="layui-collapse" lay-filter="roleList_col" lay-accordion>
                             <div class="layui-colla-item">
                                 <h2 class="layui-colla-title">角色列表</h2>
-                                <div class="layui-colla-content layui-show">超管</div>
-                                <div class="layui-colla-content layui-show">日志管理</div>
-                                <div class="layui-colla-content layui-show">表单管理</div>
+                                <div class="layui-colla-content layui-show">超管组</div>
+                                <div class="layui-colla-content layui-show">日志管理组</div>
+                                <div class="layui-colla-content layui-show">表单管理组</div>
                             </div>
                         </div>
                     </div>
@@ -388,139 +646,136 @@
                                 <col>
                             </colgroup>
                             <thead>
-                            <tr>
-                                <th>姓名</th>
-                                <th>部门</th>
-                                <th>职位</th>
-                                <th>联系方式</th>
-                                <th>操作</th>
-                            </tr>
+                                <tr>
+                                    <th>姓名</th>
+                                    <th>部门</th>
+                                    <th>职位</th>
+                                    <th>联系方式</th>
+                                    <th>操作</th>
+                                </tr>
                             </thead>
                             <tbody>
-                            <tr>
-                                <td>李某某</td>
-                                <td>产品</td>
-                                <td>产品专员</td>
-                                <td>13893266910</td>
-                                <td><i class="layui-icon layui-icon-delete"></i></td>
-                            </tr>
+                                <tr data-index="1">
+                                    <td>李某某</td>
+                                    <td>产品</td>
+                                    <td>产品专员</td>
+                                    <td>13893266910</td>
+                                    <td><i class="layui-icon layui-icon-delete"></i></td>
+                                </tr>
+                                <tr data-index="2">
+                                    <td>张某某</td>
+                                    <td>产品</td>
+                                    <td>产品专员</td>
+                                    <td>13893266910</td>
+                                    <td><i class="layui-icon layui-icon-delete"></i></td>
+                                </tr>
+                                <tr data-index="3">
+                                    <td>王某某</td>
+                                    <td>产品</td>
+                                    <td>产品专员</td>
+                                    <td>13893266910</td>
+                                    <td><i class="layui-icon layui-icon-delete"></i></td>
+                                </tr>
                             </tbody>
                         </table>
                     </div>
                     <!--创建角色的弹窗内容-->
                     <div class="creatRole">
-                        <table class="layui-table" lay-even lay-skin="nob">
-                            <tr>
-                                <td>角色名称:</td>
-                                <td><input type="text"><br></td>
-                            </tr>
-                            <tr>
-                                <td>角色描述:</td>
-                                <td><input type="text"><br></td>
-                            </tr>
-                            <tr>
-                                <td>权限分配:</td>
-                                <td>
-                                    <div class="quanxian_content">
-                                        <div class="layui-collapse" lay-accordion>
-                                            <div class="layui-colla-item">
-                                                <h2 class="layui-colla-title">表单设置</h2>
-                                                <div class="layui-colla-content layui-show"><input type="checkbox">我的表单<br></div>
-                                                <div class="layui-colla-content layui-show"><input type="checkbox">授权我的<br></div>
-                                                <div class="layui-colla-content layui-show"><input type="checkbox">创建表单<br></div>
-                                                <div class="layui-colla-content layui-show"><input type="checkbox">数据分析<br></div>
-                                                <div class="layui-colla-content layui-show"><input type="checkbox">回收站<br></div>
+                        <form id="createRole_form">
+                            <table class="layui-table" lay-even lay-skin="nob">
+                                <tr>
+                                    <td>角色名称:</td>
+                                    <td><input type="text" name="name" id="roleName"><br></td>
+                                </tr>
+                                <tr>
+                                    <td>角色描述:</td>
+                                    <td><input type="text" name="text" id="roleDescrib"><br></td>
+                                </tr>
+                                <tr>
+                                    <td>权限分配:</td>
+                                    <td>
+                                        <div class="quanxian_content">
+                                            <div class="layui-collapse" lay-accordion>
+                                                <div class="layui-colla-item">
+                                                    <h2 class="layui-colla-title">表单设置</h2>
+                                                    <div class="layui-colla-content layui-show"><input type="checkbox"
+                                                            id="myform">我的表单<br></div>
+                                                    <div class="layui-colla-content layui-show"><input type="checkbox"
+                                                            id="shouquanwode">授权我的<br></div>
+                                                    <div class="layui-colla-content layui-show"><input type="checkbox"
+                                                            id="createForm">创建表单<br></div>
+                                                    <div class="layui-colla-content layui-show"><input type="checkbox"
+                                                            id="dataAnl">数据分析<br></div>
+                                                    <div class="layui-colla-content layui-show"><input type="checkbox"
+                                                            id="recycle">回收站<br></div>
+                                                </div>
+                                            </div>
+                                            <div class="layui-collapse" lay-accordion>
+                                                <div class="layui-colla-item">
+                                                    <h2 class="layui-colla-title">系统设置</h2>
+                                                    <div class="layui-colla-content layui-show"><input type="checkbox"
+                                                            id="chaoguan">超管<br></div>
+                                                    <div class="layui-colla-content layui-show"><input type="checkbox"
+                                                            id="rizhiManage">日志管理<br></div>
+                                                    <div class="layui-colla-content layui-show"><input type="checkbox"
+                                                            id="formManage">表单管理<br></div>
+                                                </div>
                                             </div>
                                         </div>
-                                        <div class="layui-collapse" lay-accordion>
-                                            <div class="layui-colla-item">
-                                                <h2 class="layui-colla-title">系统设置</h2>
-                                                <div class="layui-colla-content layui-show"><input type="checkbox">超管<br></div>
-                                                <div class="layui-colla-content layui-show"><input type="checkbox">日志管理<br></div>
-                                                <div class="layui-colla-content layui-show"><input type="checkbox">表单管理<br></div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </td>
-                            </tr>
-                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+                        </form>
                     </div>
                     <div style="clear: both"></div>
                     <!--添加人员的内容-->
-                    <div class="addRole">
-                        <div class="layui-tab">
-                            <ul class="layui-tab-title">
-                                <li class="layui-this">部门</li>
-                                <li>职位</li>
-                            </ul>
-                            <div class="layui-tab-content">
-                                <div class="layui-tab-item layui-show">
-                                    <table class="layui-table">
-                                        <colgroup>
-                                            <col width="200">
-                                            <col width="200">
-                                            <col>
-                                        </colgroup>
-                                        <tbody>
-                                        <tr>
-                                            <td>
-                                                <div class="search">
-                                                    <input type="text" placeholder="查找部门/姓名/职位"><i class="layui-icon" style="font-size: 20px">&#xe615;</i>
-                                                </div>
-                                                <div class="layui-form">
-                                                    <i class="layui-icon layui-icon-add-1"></i><input type="checkbox" lay-skin="primary"><i class="layui-icon layui-icon-group"></i><span>办公室</span><br>
-                                                    <i class="layui-icon layui-icon-add-1"></i><input type="checkbox" lay-skin="primary"><i class="layui-icon layui-icon-group"></i><span>财务部</span><br>
-                                                    <i class="layui-icon layui-icon-add-1"></i><input type="checkbox" lay-skin="primary"><i class="layui-icon layui-icon-group"></i><span>解决方案部</span><br>
-                                                    <i class="layui-icon layui-icon-add-1"></i><input type="checkbox" lay-skin="primary"><i class="layui-icon layui-icon-group"></i><span>研发部</span><br>
-                                                    <i class="layui-icon layui-icon-add-1"></i><input type="checkbox" lay-skin="primary"><i class="layui-icon layui-icon-group"></i><span>行业客户部</span><br>
-                                                    <i class="layui-icon layui-icon-add-1"></i><input type="checkbox" lay-skin="primary"><i class="layui-icon layui-icon-group"></i><span>产品部</span><br>
-                                                </div>
-                                            </td>
-                                            <td></td>
-                                        </tr>
-                                        </tbody>
-                                    </table>
-                                    <button class="layui-btn">全部收起</button>
-                                    <button class="layui-btn">全部展开</button>
-                                    <span>已选择1人</span>
-                                </div>
-                                <div class="layui-tab-item">内容2</div>
-                            </div>
-                        </div>
-                    </div>
                 </div>
-<!-- 日志设置部分 -->
+                <!-- 日志管理部分 -->
                 <div class="log_set_box content_box">
                     <div class="logMa">
                         <div class="logMa-input">
-                            表单名称<input type="text" name="iname" id="iName" placeholder="请输入表单名称" class="all_input">
-                            发生时间<input type="text"  id="startTime" class="all_input">至
+                            表单名称<input type="text" name="iname" id="iName" placeholder="请输入表单名称" class="all_input
+                            ">
+                            发生时间<input type="text" id="startTime" class="all_input">至
                             <input type="text" id="endTime" class="all_input">
                             操作者
                             <select id="oper" class="all_input">
-                                <option>请选择</option>
-                                <option>option1</option>
-                                <option>option2</option>
-                                <option>...</option>
+                                <option></option>
+                                <option>雷梁</option>
+                                <option>袁杰</option>
+                                <option>杜辉勇</option>
+                                <option>唐鑫</option>
                             </select>
                             操作类型
                             <select id="opertype" class="all_input">
-                                <option>请选择</option>
-                                <option>option1</option>
-                                <option>option2</option>
-                                <option>...</option>
+                                <option></option>
+                                <option>启用表单</option>
+                                <option>禁用表单</option>
+                                <option>复制表单</option>
                             </select>
-                            <span class="logMa-active logMa-btn" id="logMa-select">查询</span>
+                            <span class="logMa-active logMa-btn" id="logMa-select" data-type="reload">查询</span>
                             <span class="logMa-btn" id="logMa-reset">重置</span>
                         </div>
                         <!-- 表格数据 -->
-                        <table id="tb" lay-filter="test"></table>
+                        <table id="logTb" border="1">
+                            <thead>
+                                <tr>
+                                    <th width="80">序号</th>
+                                    <th>发生时间</th>
+                                    <th>表单名称</th>
+                                    <th>操作人员</th>
+                                    <th>操作类型</th>
+                                </tr>
+                            </thead>
+                            <tbody>
 
+                            </tbody>
                         </table>
-
+                        <!-- 分页 -->
+                        <div id="demo7"></div>
                     </div>
                 </div>
-<!-- 导出设置部分 -->
+                <!-- 导出设置部分 -->
                 <div class="export_set_box content_box">
                     <div class="export-box">
                         <div class="export-title">
@@ -538,7 +793,8 @@
                             <span>修改</span>
                         </div>
                         <div class="export-content">
-                            <button class="layui-btn  layui-btn-primary layui-btn-sm  my-from-boon my-from-short my-btn-blue">添加人员</button>
+                            <button class="layui-btn  layui-btn-primary layui-btn-sm  my-from-boon my-from-short my-btn-blue"
+                                data-btn="5">添加人员</button>
                         </div>
                     </div>
                 </div>
@@ -550,15 +806,60 @@
         <img src="images/notice.png">
         <span>数据侠信息采集系统</span>
     </footer>
+    <div class="addRole">
+        <div class="layui-tab">
+            <ul class="layui-tab-title">
+                <li class="layui-this">部门</li>
+                <li>职位</li>
+            </ul>
+            <div class="layui-tab-content">
+                <div class="layui-tab-item layui-show">
+                    <table class="layui-table">
+                        <colgroup>
+                            <col width="200">
+                            <col width="200">
+                            <col>
+                        </colgroup>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <div class="search">
+                                        <input type="text" placeholder="查找部门/姓名/职位"><i class="layui-icon" style="font-size: 20px">&#xe615;</i>
+                                    </div>
+                                    <div class="content_wrap">
+                                        <div class="zTreeDemoBackground">
+                                            <ul id="treeDemo" class="ztree"></ul>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <button class="layui-btn">全部收起</button>
+                    <button class="layui-btn">全部展开</button>
+                    <span>已选择1人</span>
+                </div>
+                <div class="layui-tab-item">内容2</div>
+            </div>
+        </div>
+    </div>
+
     <script type="text/javascript" src="layui/layui.js" charset="utf-8"></script>
-    <script src="./js/DA.js"></script>
     <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/DA.js"></script>
     <script src="js/menu.js"></script>
+    <script src="js/send.js"></script>
     <script src="js/move.js"></script>
+    <script src="js/Myform.js"></script>
     <script src="js/logMa.js"></script>
     <script src="js/roleSet.js"></script>
-    <script src="js/Myform.js"></script>
-
+    <script src="js/Recycle-table.js"></script>
+    <!--ztree的js-->
+    <script type="text/javascript" src="zTree_v3/js/jquery.ztree.core.js"></script>
+    <script type="text/javascript" src="zTree_v3/js/jquery.ztree.excheck.js"></script>
+    <script type="text/javascript" src="zTree_v3/js/jquery.ztree.exedit.js"></script>
+    <!--ztree的js-->
     <script src="js/Authorize my page.js"></script>
 
 </body>

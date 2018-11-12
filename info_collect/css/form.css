@@ -12,7 +12,7 @@
     height: 35px;
     line-height: 35px;
     border-bottom: 1px solid #dbd7d7;
-    
+
 }
 
 .form_title a {
@@ -189,9 +189,9 @@
 	float: left;
 	margin-left:60%;
 	text-align: center;
-	
+
 }
 .iconfont{
-	font-size: 13px !important;
+	font-size: 13px;
 	line-height: 30px;
 }

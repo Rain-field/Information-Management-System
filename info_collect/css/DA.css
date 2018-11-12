@@ -45,8 +45,8 @@
 }
 #recordcontainner #recordcontain #recordcontaincon{
 	width:95%;
-	height: 500px;
-	border-top: 1px solid whitesmoke;
+	height:380px;
+	border-top: 1px solid  rgb(219,215,215);
 	margin: 70px auto;
 	padding: 0.1px;
 	position: relative;
@@ -58,9 +58,8 @@
 	height:40px;
 	float: left;
 	margin-top: -40px;
-	outline: 1px solid rgb(236,236,236);
 	cursor: pointer;
-	font-weight: bold;
+	font-weight: bolder;
 }
 /*合并数据和导出数据按钮的字体样式*/
 #recordcontainner #recordcontain #recordcontaincon .dealdata p{
@@ -72,23 +71,30 @@
 #meshdata{
 	margin-left: 0px;
 	background: white;
+	border-top:3px solid rgb(101,194,240);
+	border-left: 1px solid whitesmoke;
+	border-right: 1px solid whitesmoke;
 }
 /*导出数据的按钮的样式*/
 #exportdata{
-	margin-left:105px;
+	margin-left:100px;
 	background: rgb(240,245,247);
+	border: 1px solid whitesmoke;
 }
 
 /*选择区域的样式*/
 
 #choice{
 	width: 100%;
-	height:200px;
-	border: 1px solid whitesmoke;
+	min-height:200px;
+	max-height:380px;
+	border: 1px solid rgb(219,215,215);
 	margin-top:30px;
 	position: absolute;
 	z-index: 999;
 	border-radius: 10px;
+	overflow-y:auto;
+	overflow-x: hidden;
 }
 /*请选择需要关联的表单的样式*/
 #cuetext{
@@ -109,43 +115,46 @@
 /*每行选择区域的样式*/
 .choicesel{
 	width: 98%;
-	height: 40px;
+	/*height: 40px;*/
 	/*outline: 1px solid;*/
 	margin:10px auto;
-}
-.choicesel p{
-	line-height: 40px;
 }
 /*每个select的样式*/
 .sel{
 	display: inline-block;
 	width: 150px;
-	height: 30px;
+	height: 25px;
 	margin-left:20px;
+	font-size: 13px;
+	vertical-align: top;
 }
 .sel:first-child{
 	margin-left:0px;
 }
 /*输入表名的样式*/
-#tablename{
+#tablename1{
 	display: inline-block;
 	width: 150px;
 	height:25px;
+	font-size:13px;
 }
 /*输入表名后面的合并数据按钮的样式*/
 #mergebtn{
 	display: inline-block;
 	width: 100px;
-	height: 30px;
+	height: 25px;
 	background: white;
-	border: 0.2px solid lightskyblue;
+	border: 0.2px solid rgb(67,166,219);
 	cursor: pointer;
+	font-size:13px;
 }
 /*中间提示区域的文字的样式*/
 #choicesybll{
+	width: 100%;
 	height: 40px;
 	background: rgb(236,236,236);
 }
+
 #choicesybll p{
 	font-size: 11px;
 	line-height: 40px;
@@ -161,12 +170,16 @@
 #newsybll{
 	margin-left: 10px;
 }
-#sybllname{
+.sybllname{
 	display: inline-block;
-	width: 100px;
+	width:80px;
 	height:25px;
+	vertical-align:top;
 }
-
+#choiceselcontent{
+	width: 100%;
+	height: 25px;
+}
 /*添加关联字段和添加导出字段的样式*/
 .choicesel a{
 	text-decoration: none;
@@ -176,12 +189,32 @@
 	margin-left: -5px;
 	cursor: pointer;
 }
-.choicesel .iconfont{
+.iconfont{
 	vertical-align:middle;
 	margin-left: 10px;
 	cursor: pointer;
+	font-size: 16 !important;
+}
+.choicefiled{
+	width: 60%;
+	/*border: 1px solid red;*/
+	float: left;
+}
+.addfiledbtn{
+	width: 40%;
+	/*border: 1px solid red;*/
+	float: left;
 }
 
+.addstyle{
+	width: 65%;
+	height: 25px;
+	/*border: 1px solid red;*/
+	margin-top: 10px !important;
+}
+/*.iconshanchu{
+	font-size: 55px;
+}*/
 /*导出数据页面的样式*/
 
 #exportpage{
@@ -201,9 +234,9 @@
 /*
  * 表单名称的样式
  */
-#tablename{
+#tablename2{
 	width:130px;
-	height: 20px;
+	height: 25px;
 }
 /*查询的重置的公共样式*/
 .mybtn{

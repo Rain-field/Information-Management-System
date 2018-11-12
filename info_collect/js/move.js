@@ -59,7 +59,7 @@ $(document).on('click', '.create_yuansu', function (e) {
         }
     })
     var element = createInfoFunctions[type]();
-    $('#clear').remove();
+    $('.del-btn').remove();
 })
 var offsetY, offsetX;
 $(document).on('mousedown', '.create_yuansu', function (e) {
@@ -73,8 +73,8 @@ $(document).on('mousedown', '.create_yuansu', function (e) {
     offsetY = e.offsetY;
     that.css({
         position: 'fixed',
-        top: mouseY - (e.offsetY)-5,
-        left: mouseX - (e.offsetX)-7
+        top: mouseY - (e.offsetY) - 5,
+        left: mouseX - (e.offsetX) - 7
     });
     that.after('<div id="clear"></div>');
     var currentTop = 0;
@@ -92,13 +92,11 @@ $(document).on('mousedown', '.create_yuansu', function (e) {
         currentTop = parseInt(that.css('top'))
         // console.log(currentTop)
         if (currentTop - initTop > elementHeight) {
-
             num_down = parseInt((currentTop - initTop) / (elementHeight + 10));
-            console.log('向下移动了' + num_down + '个');
+            // console.log('向下移动了' + num_down + '个');
         } else if (initTop - currentTop > elementHeight) {
             num_up = parseInt((initTop - currentTop) / elementHeight);
-            console.log("向上移动了" + num_up + "个");
-
+            // console.log("向上移动了" + num_up + "个");
         }
 
     });
@@ -296,27 +294,28 @@ $(document).on('click', '.create_info button', function () {
 
 var createFunctions = {
     single: function () {
-        return $('<div class="item create_yuansu" data-type="single" data-title="单行输入框"><span class="item-title">单行输入框</span><div class="item-con"><input type="text" placeholder="请输入对应的内容" readonly></div></div>');
+        return $('<div class="item create_yuansu" data-type="single" data-title="单行输入框"><span class="item-title">单行输入框</span><div class="item-con"><input type="text" placeholder="请输入对应的内容" readonly><div class="del-btn"><i class="layui-icon">&#xe640;</i></div></div></div>');
     },
     multi: function () {
-        return $('<div class="item create_yuansu" data-type="multi" data-title="多行输入框"><span class="item-title">多行输入框</span><div class="item-con"><input type="text" placeholder="请输入对应的内容" readonly></div></div>');
+        return $('<div class="item create_yuansu" data-type="multi" data-title="多行输入框"><span class="item-title">多行输入框</span><div class="item-con"><input type="text" placeholder="请输入对应的内容" readonly><div class="del-btn"><i class="layui-icon">&#xe640;</i></div></div></div>');
     },
     radio: function () {
-        return $('<div class="item create_yuansu" data-type="radio" data-title="单选框"><span class="item-title">单选框</span><div class="item-con"><div class="item-box"><i class="fa fa-dot-circle-o"></i></div></div></div>');
+        return $('<div class="item create_yuansu" data-type="radio" data-title="单选框"><span class="item-title">单选框</span><div class="item-con"><div class="item-box"><i class="fa fa-dot-circle-o"></i></div><div class="del-btn"><i class="layui-icon">&#xe640;</i></div></div></div>');
     },
     checkbox: function () {
-        return $('<div class="item create_yuansu" data-type="checkbox" data-title="多选框"><span class="item-title">多选框</span><div class="item-con"><div class="item-box"><i class="fa fa-check-square-o"></i></div></div></div>');
+        return $('<div class="item create_yuansu" data-type="checkbox" data-title="多选框"><span class="item-title">多选框</span><div class="item-con"><div class="item-box"><i class="fa fa-check-square-o"></i></div><div class="del-btn"><i class="layui-icon">&#xe640;</i></div></div></div>');
     },
     select: function () {
-        return $('<div class="item create_yuansu" data-type="select" data-title="下拉框"><span class="item-title">下拉框</span><div class="item-con"><div class="item-box"><i class="fa fa-chevron-down"></i></div></div></div>');
+        return $('<div class="item create_yuansu" data-type="select" data-title="下拉框"><span class="item-title">下拉框</span><div class="item-con"><div class="item-box"><i class="fa fa-chevron-down"></i></div><div class="del-btn"><i class="layui-icon">&#xe640;</i></div></div></div>');
     },
     file: function () {
-        return $('<div class="item create_yuansu" data-type="file" data-title="附件"><span class="item-title">附件</span><div class="item-con"><div class="item-box"><i class="fa fa-file-o"></i></div></div></div>');
+        return $('<div class="item create_yuansu" data-type="file" data-title="附件"><span class="item-title">附件</span><div class="item-con"><div class="item-box"><i class="fa fa-file-o"></i></div><div class="del-btn"><i class="layui-icon">&#xe640;</i></div></div></div>');
     },
     date: function () {
-        return $('<div class="item create_yuansu" data-type="date" data-title="日期"><span class="item-title">日期</span><div class="item-con"><div class="item-box"><i class="fa fa-calendar"></i></div></div></div>');
+        return $('<div class="item create_yuansu" data-type="date" data-title="日期"><span class="item-title">日期</span><div class="item-con"><div class="item-box"><i class="fa fa-calendar"></i></div><div class="del-btn"><i class="layui-icon">&#xe640;</i></div></div></div>');
     }
 };
+
 
 
 //  < i class = "fa fa-trash-o deleteBtn" > 
@@ -331,17 +330,17 @@ var createInfoFunctions = {
     },
     select: function () {
         return $(
-            '<div class="create_info" style="display:none;" data-type="select"><p>标题：最多十个字</p><input type="text" name="title" value="下拉框" data-name="select_title"><p>选项：<a href="#">点击添加</a></p><div class="optionBox"><div class="itemBox"><input type="text" data-itemTitle="请选择" placeholder="请选择" readonly><span class="redText">默认文字</span></div><div class="itemBox"><input type="text" data-itemTitle="选项名" value="选项" ><img src="img/删除.png"></div></div><br><span>验证：</span><input type="checkbox" data-name="select_yanzheng">必填</div>'
+            '<div class="create_info" style="display:none;" data-type="select"><p>标题：最多十个字</p><input type="text" name="title" value="下拉框" data-name="select_title"><p>选项：<a href="#">点击添加</a></p><div class="optionBox"><div class="itemBox"><input type="text" data-itemTitle="请选择" placeholder="请选择" readonly><span class="redText">默认文字</span></div><div class="itemBox"><input type="text" data-itemTitle="选项名" value="选项" ><i class="layui-icon">&#xe640;</i></div></div><br><span>验证：</span><input type="checkbox" data-name="select_yanzheng">必填</div>'
         );
     },
     radio: function () {
         return $(
-            '<div class="create_info" style="display:none;" data-type="radio" ><p>标题：最多十个字</p><input type="text" name="title" value="单选框" data-name="radio_title"><p>选项：<a href="#">点击添加</a></p><div class="optionBox"><div class="itemBox"><input type="text" data-checkTitle="选项名" value="选项" ><img src="img/删除.png"></div><div class="itemBox"><input type="text" data-checkTitle="选项名" value="选项" ><img src="img/删除.png"></div></div><br><span>验证：</span><input type="checkbox" data-name="radio_yanzheng">必填</div>'
+            '<div class="create_info" style="display:none;" data-type="radio" ><p>标题：最多十个字</p><input type="text" name="title" value="单选框" data-name="radio_title"><p>选项：<a href="#">点击添加</a></p><div class="optionBox"><div class="itemBox"><input type="text" data-checkTitle="选项名" value="选项" ><i class="layui-icon">&#xe640;</i></div><div class="itemBox"><input type="text" data-checkTitle="选项名" value="选项" ><i class="layui-icon">&#xe640;</i></div></div><br><span>验证：</span><input type="checkbox" data-name="radio_yanzheng">必填</div>'
         );
     },
     checkbox: function () {
         return $(
-            '<div class="create_info" style="display:none;" data-type="checkbox" ><p>标题：最多十个字</p><input type="text" name="title" value="复选框" data-name="checkbox_title"><p>选项：<a href="#">点击添加</a></p><div class="optionBox"><div class="itemBox"><input type="text" data-checkTitle="选项名" value="选项" ><img src="img/删除.png"></div><div class="itemBox"><input type="text" data-checkTitle="选项名" value="选项" ><img src="img/删除.png"></div></div><br><span>验证：</span><input type="checkbox"  data-name="checkbox_yanzheng">必填</div>'
+            '<div class="create_info" style="display:none;" data-type="checkbox" ><p>标题：最多十个字</p><input type="text" name="title" value="复选框" data-name="checkbox_title"><p>选项：<a href="#">点击添加</a></p><div class="optionBox"><div class="itemBox"><input type="text" data-checkTitle="选项名" value="选项" ><i class="layui-icon">&#xe640;</i></div><div class="itemBox"><input type="text" data-checkTitle="选项名" value="选项" ><i class="layui-icon">&#xe640;</i></div></div><br><span>验证：</span><input type="checkbox"  data-name="checkbox_yanzheng">必填</div>'
         );
     },
     file: function () {
@@ -362,3 +361,10 @@ $('.right-panel').on('click', '.item', function () {
 $('.right-panel').on('click', '.deleteBtn', function () {
     $(this).parents('.item').remove();
 });
+
+
+
+// 删除节点
+$(document).on('click', '.del-btn', function (e) {
+    console.log(1234);
+})

@@ -61,14 +61,11 @@ ul,li{
     height: calc( 100% - 100px);
     display: flex;
     justify-content: space-between;
-    /* border: 1px solid red; */
 }
-
 /* 中间内容的左边菜单操作部分 */
 #content_left{
-    width: 16%;
+    width: 14%;
     min-width: 150px;
-    height: 100%;
     border-right: 1px solid #c7c7c7;
 }
 .tab_style{
@@ -128,6 +125,7 @@ ul,li{
 #content_right{
     width: 86%;
     max-height: 550px;
+    overflow: auto;
 }
 .nav_bar{
     width: 100%;
@@ -155,7 +153,6 @@ ul,li{
     float: left;
 }
 
-
 /* 底部footer部分的样式 */
 .bottom{
     width: 100%;
@@ -177,11 +174,6 @@ ul,li{
     background-color: rgb(62,175,224);
     color: white;
     pointer-events: none;
-}
-
-.white-blackfont {
-    background-color: white;
-    color: black;
 }
 .content_right_down>div{
     display: none;
