@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="./css/style.css"/>
+		<link rel="stylesheet" href="./lib/iconfont/iconfont.css" />
+		<link rel="stylesheet" href="./layui/layui/css/layui.css" />
+	</head>
+	<body>
+		<div id='recordcontainner'>
+			<div id='recordhead'>
+				<div id='recordheadcon'>
+					<p><span id='spn'>位置:</span><span id="spn02">表单设置 ></span><span id='spn03'>数据分析</span></p>
+				</div>
+			</div>
+			<div id='recordcontain'>
+				<div id='recordcontaincon'>
+					<div class='dealdata'id='meshdata'>
+						<p>合并数据</p>
+					</div>
+					<div class='dealdata'id='exportdata'>
+						<p>导出数据</p>
+					</div>
+					<div id='choice'>
+						<p id='cuetext'><span id='pipang'>|</span>请选择需要关联的表单</p>
+						<div class='choicesel'>
+							<p>
+								<select name="" id="" class='sel'>
+									<option value="请选择表单">请选择表单</option>
+								</select>
+								<select name="" id="" class='sel'>
+									<option value="请选择表单">请选择表单</option>
+								</select>
+								<select name="" id="" class='sel'>
+									<option value="请选择表单">请选择表单</option>
+								</select>
+								<input type="text" name="name" id="tablename" placeholder='新表名称'/>
+								<input type='button' id='mergebtn' value='合并数据'>
+							</p>
+						</div>
+						<div class='choicesel' id='choicesybll'>
+							<p>请选择需要关联的字段<span id='cue'>(已经选择的表单会发生变化，以下的已添加字段会删除，然后重新添加)</span><span id='newsybll'>新的字段名</span></p>
+						</div>
+						<div class='choicesel'>
+							<p>
+								<select name="" id="" class='sel'>
+									<option value="请选择字段">请选择字段</option>
+								</select>
+								<select name="" id="" class='sel'>
+									<option value="请选择字段">请选择字段</option>
+								</select>
+								<select name="" id="" class='sel'>
+									<option value="请选择字段">请选择字段</option>
+								</select>
+								<input type="text " name="sybllname" id="sybllname" value="" />
+								<i class='iconfont icon-htmal5icon18'></i>
+								<a href="#">添加关联字段</a>
+								<i class='iconfont icon-htmal5icon18'></i>
+								<a href="#">添加导出字段</a>
+							</p>
+							
+						</div>
+					</div>
+					<div id='exportpage'>
+						<div id="selecttable">
+							<form action="#" method="post">
+								<label for="tablename">表单名称</label>
+								<input type="text" name='tabelname' id='tablename' />
+								<label for="createtimestart">创建时间</label>
+								<input type="text" name='createtimestart' id='createtimestart' />
+								<span>至</span>
+								<input type="text" name='createtimeend' id='createtimeend' />
+								<button class='mybtn' id='selectbtn'>查询</button>
+								<button class='mybtn' id='resetbtn'>重置</button>
+								<input type="button" value='导出总表' id='inbtn' />
+							</form>
+						</div>
+					</div>					
+				</div>
+			</div>
+		</div>
+		<script src='./lib/layui/layui/layui.js'></script>
+		<script src='./js/script.js'></script>
+	</body>
+</html>

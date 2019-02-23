@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>角色管理</title>
+    <link rel="stylesheet" href="../layui/css/layui.css">
+    <!--引入角色管理css-->
+    <link rel="stylesheet" href="css/roleSet.css">
+</head>
+<body>
+    <div class="juese">
+        <button class="layui-btn layui-btn-primary" data-btn="1"><i class="layui-icon layui-icon-add-1"></i>新建角色</button>
+        <button class="layui-btn layui-btn-primary" data-btn="2"><i class="layui-icon layui-icon-edit"></i>编辑角色</button>
+        <button class="layui-btn layui-btn-primary" data-btn="3"><i class="layui-icon layui-icon-close"></i>删除角色</button>
+        <button class="layui-btn layui-btn-primary" data-btn="4"><i class="layui-icon layui-icon-username"></i>添加人员</button>
+    </div>
+    <div class="jueseList">
+        <div class="layui-collapse" lay-accordion>
+            <div class="layui-colla-item">
+                <h2 class="layui-colla-title">角色列表</h2>
+                <div class="layui-colla-content layui-show">超管</div>
+                <div class="layui-colla-content layui-show">日志管理</div>
+                <div class="layui-colla-content layui-show">表单管理</div>
+            </div>
+        </div>
+    </div>
+    <div class="table">
+        <table class="layui-table">
+            <colgroup>
+                <col width="150">
+                <col width="200">
+                <col>
+            </colgroup>
+            <thead>
+            <tr>
+                <th>姓名</th>
+                <th>部门</th>
+                <th>职位</th>
+                <th>联系方式</th>
+                <th>操作</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>李某某</td>
+                <td>产品</td>
+                <td>产品专员</td>
+                <td>13893266910</td>
+                <td><i class="layui-icon layui-icon-delete"></i></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <!--创建角色的弹窗内容-->
+    <div class="creatRole">
+        <table class="layui-table" lay-even lay-skin="nob">
+            <tr>
+                <td>角色名称:</td>
+                <td><input type="text"><br></td>
+            </tr>
+            <tr>
+                <td>角色描述:</td>
+                <td><input type="text"><br></td>
+            </tr>
+            <tr>
+                <td>权限分配:</td>
+                <td>
+                    <div class="quanxian_content">
+                        <div class="layui-collapse" lay-accordion>
+                            <div class="layui-colla-item">
+                                <h2 class="layui-colla-title">表单设置</h2>
+                                <div class="layui-colla-content layui-show"><input type="checkbox">我的表单<br></div>
+                                <div class="layui-colla-content layui-show"><input type="checkbox">授权我的<br></div>
+                                <div class="layui-colla-content layui-show"><input type="checkbox">创建表单<br></div>
+                                <div class="layui-colla-content layui-show"><input type="checkbox">数据分析<br></div>
+                                <div class="layui-colla-content layui-show"><input type="checkbox">回收站<br></div>
+                            </div>
+                        </div>
+                        <div class="layui-collapse" lay-accordion>
+                            <div class="layui-colla-item">
+                                <h2 class="layui-colla-title">系统设置</h2>
+                                <div class="layui-colla-content layui-show"><input type="checkbox">超管<br></div>
+                                <div class="layui-colla-content layui-show"><input type="checkbox">日志管理<br></div>
+                                <div class="layui-colla-content layui-show"><input type="checkbox">表单管理<br></div>
+                            </div>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div style="clear: both"></div>
+    <!--添加人员的内容-->
+    <div class="addRole">
+        <div class="layui-tab">
+            <ul class="layui-tab-title">
+                <li class="layui-this">部门</li>
+                <li>职位</li>
+            </ul>
+            <div class="layui-tab-content">
+                <div class="layui-tab-item layui-show">
+                    <table class="layui-table">
+                        <colgroup>
+                            <col width="200">
+                            <col width="200">
+                            <col>
+                        </colgroup>
+                        <tbody>
+                        <tr>
+                            <td>
+                                <div class="search">
+                                    <input type="text" placeholder="查找部门/姓名/职位"><i class="layui-icon" style="font-size: 20px">&#xe615;</i>
+                                </div>
+                                <div class="layui-form">
+                                    <i class="layui-icon layui-icon-add-1"></i><input type="checkbox" lay-skin="primary"><i class="layui-icon layui-icon-group"></i><span>办公室</span><br>
+                                    <i class="layui-icon layui-icon-add-1"></i><input type="checkbox" lay-skin="primary"><i class="layui-icon layui-icon-group"></i><span>财务部</span><br>
+                                    <i class="layui-icon layui-icon-add-1"></i><input type="checkbox" lay-skin="primary"><i class="layui-icon layui-icon-group"></i><span>解决方案部</span><br>
+                                    <i class="layui-icon layui-icon-add-1"></i><input type="checkbox" lay-skin="primary"><i class="layui-icon layui-icon-group"></i><span>研发部</span><br>
+                                    <i class="layui-icon layui-icon-add-1"></i><input type="checkbox" lay-skin="primary"><i class="layui-icon layui-icon-group"></i><span>行业客户部</span><br>
+                                    <i class="layui-icon layui-icon-add-1"></i><input type="checkbox" lay-skin="primary"><i class="layui-icon layui-icon-group"></i><span>产品部</span><br>
+                                </div>
+                            </td>
+                            <td></td>
+                        </tr>
+                        </tbody>
+                    </table>
+                    <button class="layui-btn">全部收起</button>
+                    <button class="layui-btn">全部展开</button>
+                    <span>已选择1人</span>
+                </div>
+                <div class="layui-tab-item">内容2</div>
+            </div>
+        </div>
+    </div>
+    <script src="layui/layui.js"></script>
+    <!--<script src="js/jquery-3.3.1.js"></script>-->
+    <script src="js/mylayui.js"></script>
+<script>
+    //一般直接写在一个js文件中
+    layui.use(['layer', 'form', 'element','jquery'], function() {
+        var layer = layui.layer
+            , form = layui.form
+            , element = layui.element
+            ,$=layui.$;
+        //你的代码都应该写在这里面
+        $('button').click(function (e) {
+            var data_btn = $(this).data('btn');
+            if (data_btn == 1) {
+                console.log(data_btn);
+                layer.open({
+                title: '新建角色',
+                type: 1,
+                //这里content是一个DOM，注意：最好该元素要存放在body最外层，否则可能被其它的相对元素所影响
+                content:$('.creatRole'),
+                btn: ['保存', '取消'],
+                area: ['500px', '500px']
+                });
+            }
+            if (data_btn == 2) {
+                console.log(data_btn);
+                layer.open({
+                    title: '编辑角色',
+                    type: 1,
+                    content:$('.creatRole'),
+                    btn: ['保存', '取消'],
+                    area: ['500px', '500px']
+                });
+            }
+            if (data_btn == 3) {
+                console.log(data_btn);
+                layer.open({
+                    title: '删除角色',
+                    content: '您确定要删除吗？',
+                    btn: ['确定', '取消']
+                })
+            }
+            if (data_btn == 4) {
+                console.log(data_btn);
+                layer.open({
+                    title: '选择用户',
+                    type: 1,
+                    content:$('.addRole'),
+                    btn: ['确定'],
+                    area: ['550px']
+                });
+            }
+        });
+    // layui底部
+    });
+
+</script>
+</body>
+</html>

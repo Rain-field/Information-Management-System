@@ -1,0 +1,101 @@
+body{
+    padding: 0 10px;
+}
+.juese{
+    width: 100%;
+    height: 100%;
+}
+.juese .layui-btn-primary{
+    width: 100px;
+    height: 26px;
+    border: 1px solid #2F88C6;
+    border-radius: 5px;
+    font-size: 13px;
+    text-align: center;
+    line-height: 24px;
+    padding: 0;
+    color: #2F88C6;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+.jueseList{
+    width: 30%;
+    float: left;
+}
+.jueseList .layui-colla-title{
+    padding: 0;
+}
+.jueseList .layui-collapse{
+    text-align: center;
+}
+.table{
+    width: 65%;
+    float: right;
+}
+.layui-table{
+    margin: 0;
+    text-align: center;
+}
+.layui-table th{
+    text-align: center;
+}
+.creatRole{
+    width: 500px;
+    display: none;
+}
+.quanxian_content{
+    height: 300px;
+    overflow-y: auto;
+}
+.layui-table{
+    text-align: left;
+}
+.quanxian_content .layui-collapse{
+    text-align: left;
+}
+.addRole{
+    width: 500px;
+    display: none;
+}
+.addRole .layui-tab-title{
+    border: none;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    margin-left: 10px;
+}
+.addRole .layui-this{
+    color: #fff;
+    background-color: #53ADE6;
+}
+.addRole .layui-tab-content input{
+    height: 30px;
+    position: relative;
+}
+.addRole .layui-tab-content .layui-table{
+    height: 300px;
+    margin-bottom: 10px;
+}
+.addRole .layui-tab-content .layui-table .content_wrap{
+    width: 100%;
+    height: 210px;
+}
+.addRole .layui-tab-content .layui-table .content_wrap .ztree{
+    height: 210px;
+}
+.search i{
+    position: relative;
+    right: 25px;
+    color: #0a6cd6;
+}
+.addRole .layui-tab-content .layui-table .layui-form{
+    height: 250px;
+    overflow-y: scroll;
+    position: relative;
+    margin: 0;
+}
+.addRole .layui-tab-content .layui-table .layui-form .layui-icon-add-1{
+    color: #0a6cd6;
+}
+.addRole .layui-tab-content .layui-table .layui-form .layui-icon-group{
+    color: #F9CF82;
+}

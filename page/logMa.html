@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" type="text/css" href="../layui/css/layui.css">
+	<style type="text/css">
+		body{
+			padding: 0;
+			margin: 0;
+			font-size: 14px;
+		}
+		.logMa-active{
+			color: white;
+			background: #418CC2;
+		}
+		.logMa-input{
+			margin-top:20px;
+		}
+		.logMa-input input{
+			border: 1px solid #ccc;
+			height: 20px;
+			margin: 0 5px;
+			border-radius: 5px;
+		}
+		.logMa-btn{
+			margin-left: 10px;
+			padding: 5px 20px;
+			border:1px solid #ccc;
+			border-radius: 5px;
+			cursor: pointer;
+		}
+		#startTime,#endTime{
+			width:150px;
+		}
+		.layui-table-page{
+			text-align: center;
+		}
+
+	</style>
+</head>
+<body>
+	<div class="logMa">
+		<div class="logMa-input">
+			表单名称<input type="text" name="iname" id="iName" placeholder="请输入表单名称">
+			发生时间<input type="text"  id="startTime">至
+			<input type="text" id="endTime">
+			操作者
+			<select id="oper">
+				<option>请选择</option>
+				<option>option1</option>
+				<option>option2</option>
+				<option>...</option>
+			</select>
+			操作类型
+			<select id="opertype">
+				<option>请选择</option>
+				<option>option1</option>
+				<option>option2</option>
+				<option>...</option>
+			</select>
+			<span class="logMa-active logMa-btn" id="logMa-select">查询</span>
+			<span class="logMa-btn" id="logMa-reset">重置</span>
+		</div>
+		<!-- 表格数据 -->
+		<table id="tb" lay-filter="test"></table>
+
+		</table>
+
+	</div>
+	<script type="text/javascript" src="../js/jquery-3.3.1.js"></script>
+	<script type="text/javascript" src="../layui/layui.js"></script>
+	<script>
+		layui.use(['table','laydate'], function(){
+		  var table = layui.table;
+		  var laydate = layui.laydate;
+		  laydate.render({
+		    elem: '#startTime' //指定元素
+		  });
+		  laydate.render({
+		    elem: '#endTime' //指定元素
+		  });
+		  table.render({
+		    elem: '#tb',
+		    skin: 'line', //行边框风格
+		    even: 'true', //开启隔行背景
+		    // url: ' ', //数据接口
+		    page: true, //开启分页
+		    limit: 10,//每页显示条数
+		    cols: [[ //表头
+		      {field: 'id', title: '序号',  fixed: 'left', align: 'center',width: '5%'},
+		      {field: 'placeTime', title: '发生时间', align: 'center',width: '30%'},
+		      {field: 'informName', title: '表单名称', align: 'center',width: '45%'},
+		      {field: 'oper', title: '操作人员', align: 'center',width: '10%'},
+		      {field: 'opertype', title: '操作类型', align: 'center',width: '10%'}
+		    ]],
+		    data:[
+		    	{'id':'1','placeTime':'2018-07-16 15:26:17','informName':'境外实有人口信息采集','oper':'李玉玲','opertype':'启用表单'},
+		    	{'id':'2','placeTime':'2018-07-16 15:26:17','informName':'境外实有人口信息采集','oper':'李玉玲','opertype':'启用表单'},
+		    	{'id':'3','placeTime':'2018-07-16 15:26:17','informName':'境外实有人口信息采集','oper':'李玉玲','opertype':'启用表单'},
+		    	{'id':'4','placeTime':'2018-07-16 15:26:17','informName':'境外实有人口信息采集','oper':'李玉玲','opertype':'启用表单'},
+		    	{'id':'5','placeTime':'2018-07-16 15:26:17','informName':'境外实有人口信息采集','oper':'李玉玲','opertype':'启用表单'},
+		    	{'id':'6','placeTime':'2018-07-16 15:26:17','informName':'境外实有人口信息采集','oper':'李玉玲','opertype':'启用表单'},
+		    	{'id':'7','placeTime':'2018-07-16 15:26:17','informName':'境外实有人口信息采集','oper':'李玉玲','opertype':'启用表单'},
+		    	{'id':'8','placeTime':'2018-07-16 15:26:17','informName':'境外实有人口信息采集','oper':'李玉玲','opertype':'启用表单'},
+		    	{'id':'9','placeTime':'2018-07-16 15:26:17','informName':'境外实有人口信息采集','oper':'李玉玲','opertype':'启用表单'},
+		    	{'id':'10','placeTime':'2018-07-16 15:26:17','informName':'境外实有人口信息采集','oper':'李玉玲','opertype':'启用表单'},
+		    	{'id':'11','placeTime':'2018-07-16 15:26:17','informName':'境外实有人口信息采集','oper':'李玉玲','opertype':'启用表单'},
+		    	{'id':'12','placeTime':'2018-07-16 15:26:17','informName':'境外实有人口信息采集','oper':'李玉玲','opertype':'启用表单'},
+		    	{'id':'13','placeTime':'2018-07-16 15:26:17','informName':'境外实有人口信息采集','oper':'李玉玲','opertype':'启用表单'},
+		    	{'id':'14','placeTime':'2018-07-16 15:26:17','informName':'境外实有人口信息采集','oper':'李玉玲','opertype':'启用表单'}
+		    ]
+		  });
+		});
+		// $("#logMa-select").on("click",function(){
+		// 	var a = $("#oper").val();
+		// 	console.log(a);
+		// })
+</script>
+</body>
+</html>

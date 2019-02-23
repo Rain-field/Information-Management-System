@@ -1,0 +1,52 @@
+body{
+    padding: 0;
+    margin: 0;
+    font-size: 14px;
+}
+.logMa-active{
+    color: white;
+    background: rgb(62,175,224);
+}
+.logMa-input{
+    margin-top:20px;
+}
+.logMa-input input{
+    margin: 0 5px;
+}
+.logMa-btn{
+    margin-left: 10px;
+    padding: 3px 20px;
+    border:1px solid #ccc;
+    border-radius: 5px;
+    cursor: pointer;
+}
+#startTime,#endTime{
+    width:150px;
+}
+.layui-table-page{
+    text-align: center;
+}
+.all_input{
+    border-radius: 5px;
+    height: 25px;
+    border: 1px solid #ccc;
+}
+#logTb{
+    margin-top: 20px;
+    width: 100%;
+    text-align: center;
+    color: #2d2d2d;
+}
+#logTb th{
+    background: #f0f5f7;
+    padding: 6px;
+    border: 1px solid #b6cad2;
+    color: #333;
+}
+#logTb td{
+    border: 1px solid #e7e7e7;
+    padding: 6px;
+}
+#logTb tr:nth-child(2n){
+    background: #f5f8fa;
+}

@@ -1,0 +1,89 @@
+*{
+    margin: 0;
+    padding: 0;
+}  
+.Release{
+    height: auto;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    padding: 20px 10px;
+    margin: 20px 10px;
+    font-size: 14px;
+}
+hr{
+    color: #eee;
+}
+.Release-text{
+    padding-left: 8px;
+    margin-left: 20px;
+}
+.Release-text1{
+width: 200px;
+text-align: left;
+}
+.Release-fuhao{
+    color: red;
+    padding-left: 3px;
+   
+}
+.Release p{
+    height: 10px;
+}
+.Release-line{
+    font-size: 18px;  
+}
+.Release-send{
+    margin-left: 3px;
+    font-size: 14px;
+    color: #3EAFE0;
+    
+}
+.Release-content{
+    margin-left: 10px;
+}
+.Release-addpeople{
+    padding: 2px;
+    color:#3EAFE0;
+    margin-left: 20px;
+    border: 1px solid #3EAFE0;
+    background:transparent;
+    cursor: pointer;
+}
+.Release-addpeople:hover{
+    background:#3EAFE0;
+    color: #fff;
+}
+textarea{
+    resize: none;
+    position: relative;
+    top: 15px;
+    padding: 3px 5px;
+    
+}
+.Submit{
+    position: relative;
+    margin-left: 45%;
+    margin-bottom:30px; 
+}
+.Submit button{
+    padding: 2px;
+    color: #3EAFE0;
+    margin-left: 10px;
+    border-radius: 2px;
+    outline: none;
+    cursor: pointer;
+    border: 1px solid #3EAFE0;
+    background:transparent;
+}
+.addpeople1{
+    border: 1px solid rgb(103, 103, 226);
+    margin-left: 10px;
+}
+.addRole{
+    display: block;
+}
+.change{
+    display: none;
+    
+}

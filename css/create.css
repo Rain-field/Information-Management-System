@@ -1,0 +1,147 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.form-box {
+    width: 800px;
+    height: 500px;
+    border: 1px solid #000;
+    margin: 100px auto;
+    font-size: 0;
+    border-radius: 10px;
+}
+
+.panel {
+    width: 50%;
+    height: 100%;
+    display: inline-block;
+    vertical-align: top;
+}
+
+.form-item {
+    width: 150px;
+    height: 25px;
+    border: 1px solid #666;
+    float: left;
+    line-height: 30px;
+    margin-bottom: 10px;
+    /* margin-right: 25px; */
+    cursor: pointer;
+    user-select: none;
+    display: flex;
+    align-items: center;
+    font-size: 10px;
+    color: #666;
+}
+
+.form-item .fa {
+    width: 15px;
+    height: 15px;
+    line-height: 15px;
+    font-size: 10px;
+    color: #000;
+    margin-left: 20px;
+    margin-right: 10px;
+}
+
+.left-panel {
+    padding: 20px;
+}
+
+.right-panel {
+    border-left: 1px solid darkkhaki;
+    padding: 0px 4px !important;
+    font-size: 10px;
+    overflow-y: auto;
+}
+
+.item {
+    width: 100%;
+    max-width:193px ;
+    height: 30px;
+    padding-left: 5px;
+    border: 1px solid #D9D8DB;
+    display: flex;
+    align-items: center;
+    box-shadow: 1px 1px 2px rgba(0, 0, 0, .2);
+    user-select: none;
+    margin: 5px 0;
+    overflow: hidden;
+    border-radius: 3px;
+    background-color: #fff;
+}
+
+.item-title {
+    width: 25%;
+    height: 30px;
+    line-height: 30px;
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.item input {
+    width: 75%;
+    height: 30px;
+    line-height: 30px;
+    display: inline-block;
+    border: none;
+    outline: none;
+}
+
+.item .item-box {
+    width: 75%;
+    height: 30px;
+    line-height: 30px;
+    font-size: 10px;
+}
+
+.item-con {
+    width: 75%;
+    height: 30px;
+    position: relative;
+}
+
+input::-webkit-input-placeholder {
+    font-size: 10px;
+}
+
+input:-moz-placeholder {
+    font-size: 10px;
+}
+
+input::-moz-placeholder {
+    font-size: 10px;
+}
+
+input:-ms-input-placeholder {
+    font-size: 10px;
+}
+
+.item-box .fa {
+    height: 30px;
+    line-height: 30px;
+    float: right;
+}
+
+.deleteBtn {
+    position: absolute;
+    right: 5px;
+    bottom: 5px;
+    display: none !important;
+}
+
+.item-active {
+    border: 2px solid #86b9ec;
+}
+
+.item-active .deleteBtn {
+    display: block !important;
+}
+
+.form_btn_box{
+    overflow: hidden !important;
+    padding: 15px 20px;
+}
+
